@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="installing python3 errors raise： python3: error while loading shared libraries: libpython3.5m.so.1.0: cannot open shared object file: No such file or directory">
+<meta name="description" content="installing python3 errors raise：">
 <meta name="keywords" content="python3,linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python3: error while loading shared libraries">
 <meta property="og:url" content="http://eromonstersanji.github.io/2017/07/11/python3-error-while-loading-shared-libraries-libpython3-5m-so-1-0-cannot-open-shared-object-file-No-such-file-or-directory/index.html">
 <meta property="og:site_name" content="EroMonsterSanji">
-<meta property="og:description" content="installing python3 errors raise： python3: error while loading shared libraries: libpython3.5m.so.1.0: cannot open shared object file: No such file or directory">
-<meta property="og:updated_time" content="2017-07-10T21:31:05.000Z">
+<meta property="og:description" content="installing python3 errors raise：">
+<meta property="og:updated_time" content="2017-07-10T21:42:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python3: error while loading shared libraries">
-<meta name="twitter:description" content="installing python3 errors raise： python3: error while loading shared libraries: libpython3.5m.so.1.0: cannot open shared object file: No such file or directory">
+<meta name="twitter:description" content="installing python3 errors raise：">
 
 
 
@@ -299,13 +299,12 @@
       
 
       
-        <h3 id="installing-python3-errors-raise："><a href="#installing-python3-errors-raise：" class="headerlink" title="installing python3 errors raise："></a>installing python3 errors raise：</h3><blockquote>
-<p>python3: error while loading shared libraries: libpython3.5m.so.1.0: cannot open shared object file: No such file or directory</p>
-</blockquote>
-<a id="more"></a>
+        <h3 id="installing-python3-errors-raise："><a href="#installing-python3-errors-raise：" class="headerlink" title="installing python3 errors raise："></a>installing python3 errors raise：</h3><a id="more"></a>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ wget https://www.python.org/ftp/python/3.X.X/Python-3.X.X.tgz</div></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ./configure --prefix=/usr/<span class="built_in">local</span>/Python-3.X.X --<span class="built_in">enable</span>-shared</div><div class="line">$ make</div><div class="line">$ make install</div></pre></td></tr></table></figure>
-<h4 id="Error-raising："><a href="#Error-raising：" class="headerlink" title="Error raising："></a>Error raising：</h4><p><code>python3: error while loading shared libraries: libpython3.Xm.so.1.0: cannot open shared object file: No such file or directory</code></p>
+<h4 id="Error-raising："><a href="#Error-raising：" class="headerlink" title="Error raising："></a>Error raising：</h4><blockquote>
+<p>python3: error while loading shared libraries: libpython3.Xm.so.1.0: cannot open shared object file: No such file or directory</p>
+</blockquote>
 <h4 id="Solutions："><a href="#Solutions：" class="headerlink" title="Solutions："></a>Solutions：</h4><ol>
 <li>check the dynamic lib<br><code>ldd /usr/local/Python-3.X.X/bin/python3</code></li>
 <li>copy from the source code directory<br><code>cp libpython3.Xm.so.1.0 /usr/lib/</code></li>
