@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="tar command1$ tar [-cxtzjvfpPN] files or directories Arguments： -c: Create a new archive containing the specified items.  -x: Extract to disk from the archive.  -t: List archive contents.    Notice:-c">
+<meta name="description" content="tar command1$ tar [-cxtzjvfpPN] files or directories">
 <meta name="keywords" content="linux&#x2F;unix">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tar command">
 <meta property="og:url" content="http://eromonstersanji.github.io/2017/07/11/tar-command/index.html">
 <meta property="og:site_name" content="EroMonsterSanji">
-<meta property="og:description" content="tar command1$ tar [-cxtzjvfpPN] files or directories Arguments： -c: Create a new archive containing the specified items.  -x: Extract to disk from the archive.  -t: List archive contents.    Notice:-c">
-<meta property="og:updated_time" content="2017-07-12T10:41:32.000Z">
+<meta property="og:description" content="tar command1$ tar [-cxtzjvfpPN] files or directories">
+<meta property="og:updated_time" content="2017-07-12T10:55:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tar command">
-<meta name="twitter:description" content="tar command1$ tar [-cxtzjvfpPN] files or directories Arguments： -c: Create a new archive containing the specified items.  -x: Extract to disk from the archive.  -t: List archive contents.    Notice:-c">
+<meta name="twitter:description" content="tar command1$ tar [-cxtzjvfpPN] files or directories">
 
 
 
@@ -300,6 +300,7 @@
 
       
         <h3 id="tar-command"><a href="#tar-command" class="headerlink" title="tar command"></a>tar command</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ tar [-cxtzjvfpPN] files or directories</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h4 id="Arguments："><a href="#Arguments：" class="headerlink" title="Arguments："></a>Arguments：</h4><ul>
 <li><p><code>-c</code>: Create a new archive containing the specified items.</p>
 </li>
@@ -324,6 +325,7 @@
 <li><p><code>-p</code>: (x mode only) Preserve file permissions.</p>
 </li>
 </ul>
+<hr>
 <h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples:"></a>Examples:</h3><ol>
 <li><p>Tarring all files in <code>/etc</code> to <code>/tmp/etc.tar</code></p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ tar -cvf /tmp/etc.tar /etc      <span class="comment"># No compressing</span></div><div class="line">$ tar -zcvf /tmp/etc.tar.gz /etc  <span class="comment"># Compressing with gzip</span></div><div class="line">$ tar -jcvf /tmp/etc.tar.bz2 /etc <span class="comment"># Compressing with bzip2</span></div></pre></td></tr></table></figure>
