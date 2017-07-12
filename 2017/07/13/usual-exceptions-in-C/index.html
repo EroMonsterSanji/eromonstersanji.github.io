@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux/unix," />
+  <meta name="keywords" content="C/C++,Exceptions," />
 
 
 
@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="tar command1$ tar [-cxtzjvfpPN] files or directories">
-<meta name="keywords" content="linux&#x2F;unix">
+<meta name="description" content="Some exceptions may occur while C/C++ coding:">
+<meta name="keywords" content="C&#x2F;C++,Exceptions">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tar command">
-<meta property="og:url" content="http://eromonstersanji.github.io/2017/07/11/tar-command/index.html">
+<meta property="og:title" content="Usual exceptions in C&#x2F;C++">
+<meta property="og:url" content="http://eromonstersanji.github.io/2017/07/13/usual-exceptions-in-C/index.html">
 <meta property="og:site_name" content="EroMonsterSanji">
-<meta property="og:description" content="tar command1$ tar [-cxtzjvfpPN] files or directories">
-<meta property="og:updated_time" content="2017-07-12T19:20:42.000Z">
+<meta property="og:description" content="Some exceptions may occur while C/C++ coding:">
+<meta property="og:updated_time" content="2017-07-12T19:33:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tar command">
-<meta name="twitter:description" content="tar command1$ tar [-cxtzjvfpPN] files or directories">
+<meta name="twitter:title" content="Usual exceptions in C&#x2F;C++">
+<meta name="twitter:description" content="Some exceptions may occur while C/C++ coding:">
 
 
 
@@ -115,10 +115,10 @@
 
 
 
-  <link rel="canonical" href="http://eromonstersanji.github.io/2017/07/11/tar-command/"/>
+  <link rel="canonical" href="http://eromonstersanji.github.io/2017/07/13/usual-exceptions-in-C/"/>
 
 
-  <title> Tar command | EroMonsterSanji </title>
+  <title> Usual exceptions in C/C++ | EroMonsterSanji </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="default">
@@ -240,7 +240,7 @@
             
             
               
-                Tar command
+                Usual exceptions in C/C++
               
             
           </h1>
@@ -252,8 +252,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-07-11T22:49:25+08:00" content="2017-07-11">
-              2017-07-11
+            <time itemprop="dateCreated" datetime="2017-07-13T03:09:49+08:00" content="2017-07-13">
+              2017-07-13
             </time>
           </span>
 
@@ -266,8 +266,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/linux-unix/" itemprop="url" rel="index">
-                    <span itemprop="name">linux/unix</span>
+                  <a href="/categories/C-C/" itemprop="url" rel="index">
+                    <span itemprop="name">C/C++</span>
                   </a>
                 </span>
 
@@ -299,56 +299,12 @@
       
 
       
-        <h3 id="tar-command"><a href="#tar-command" class="headerlink" title="tar command"></a>tar command</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ tar [-cxtzjvfpPN] files or directories</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h4 id="Arguments："><a href="#Arguments：" class="headerlink" title="Arguments："></a>Arguments：</h4><ul>
-<li><p><code>-c</code>: Create a new archive containing the specified items.</p>
-</li>
-<li><p><code>-x</code>: Extract to disk from the archive.</p>
-</li>
-<li><p><code>-t</code>: List archive contents.</p>
-</li>
-</ul>
-<blockquote>
-<p><strong>Notice</strong>:<br><code>-c/x/t</code> Only one can be used.</p>
-</blockquote>
+        <h2 id="Some-exceptions-may-occur-while-C-C-coding"><a href="#Some-exceptions-may-occur-while-C-C-coding" class="headerlink" title="Some exceptions may occur while C/C++ coding:"></a>Some exceptions may occur while C/C++ coding:</h2><a id="more"></a>
 <ul>
-<li><p><code>-z</code>: Compress the resulting archive with <strong><em>gzip</em></strong>. In extract or list modes, this option is ignored.</p>
-</li>
-<li><p><code>-j</code>: Compress the resulting archive with <strong><em>bzip2</em></strong>. In extract or list modes, this option is ignored.</p>
-</li>
-<li><p><code>-v</code>: In create and extract modes, tar will list each file name as it is read from or written to the archive. In list mode, tar will produce output similar to that of ls.</p>
-</li>
-<li><p><code>-f</code>: Read the archive from or write the archive to the specified file.</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ tar -zcvfP tfile sfile <span class="comment"># Incorrect</span></div><div class="line"></div><div class="line">$ tar -zcvPf tfile sfile <span class="comment"># Correct</span></div></pre></td></tr></table></figure>
-</li>
-<li><p><code>-p</code>: (x mode only) Preserve file permissions.</p>
+<li><p><code>std::domain_error</code></p>
+<p>  It may be used by the implementation to report domain errors, that is, situations where the inputs are outside of the domain on which an operation is defined.</p>
 </li>
 </ul>
-<hr>
-<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples:"></a>Examples:</h3><ol>
-<li><p>Tarring all files in <code>/etc</code> to <code>/tmp/etc.tar</code></p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ tar -cvf /tmp/etc.tar /etc      <span class="comment"># No compressing</span></div><div class="line">$ tar -zcvf /tmp/etc.tar.gz /etc  <span class="comment"># Compressing with gzip</span></div><div class="line">$ tar -jcvf /tmp/etc.tar.bz2 /etc <span class="comment"># Compressing with bzip2</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>Listing files in <code>/tmp/etc.tar.gz</code></p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ tar -ztvf /tmp/etc.tar.gz       <span class="comment"># Cause we compressed with gzip, the -z is necessary</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>Decompress <code>/tmp/etc.tar.gz</code> to <code>/usr/local/src</code></p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src</div><div class="line">$ tar -zxvf /tmp/etc.tar.gz</div></pre></td></tr></table></figure>
-</li>
-<li><p>Decompressing the <code>etc/passwd</code> in <code>/tmp/etc.tar.gz</code> to <code>/tmp</code></p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /tmp</div><div class="line">$ tar -zxvf /tmp/etc.tar.gz etc/passwd</div></pre></td></tr></table></figure>
-</li>
-<li><p>Tarring all files in <code>/etc/</code>, and keeping their permission</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ tar -zxvpf /tmp/etc.tar.gz /etc</div></pre></td></tr></table></figure>
-</li>
-<li><p>Only the files later than 2005/06/01 will be tarred into <code>/home</code></p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ tar -N <span class="string">'2005/06/01'</span> -zcvf home.tar.gz /home</div></pre></td></tr></table></figure>
-</li>
-<li><p>To tar <code>/home</code>, <code>/etc</code> excluding <code>/home/dmtsai</code></p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ tar --exclude /home/dmtsai -zcvf myfile.tar.gz /home/* /etc</div></pre></td></tr></table></figure>
-</li>
-</ol>
 
       
     </div>
@@ -371,7 +327,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux-unix/" rel="tag">#linux/unix</a>
+            <a href="/tags/C-C/" rel="tag">#C/C++</a>
+          
+            <a href="/tags/Exceptions/" rel="tag">#Exceptions</a>
           
         </div>
       
@@ -380,17 +338,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/11/python3-error-while-loading-shared-libraries-libpython3-5m-so-1-0-cannot-open-shared-object-file-No-such-file-or-directory/" rel="next" title="Python3: error while loading shared libraries">
-                <i class="fa fa-chevron-left"></i> Python3: error while loading shared libraries
+              <a href="/2017/07/11/tar-command/" rel="next" title="Tar command">
+                <i class="fa fa-chevron-left"></i> Tar command
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/13/usual-exceptions-in-C/" rel="prev" title="Usual exceptions in C/C++">
-                Usual exceptions in C/C++ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -504,7 +458,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#tar-command"><span class="nav-number">1.</span> <span class="nav-text">tar command</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Arguments："><span class="nav-number">1.1.</span> <span class="nav-text">Arguments：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Examples"><span class="nav-number">2.</span> <span class="nav-text">Examples:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Some-exceptions-may-occur-while-C-C-coding"><span class="nav-number">1.</span> <span class="nav-text">Some exceptions may occur while C/C++ coding:</span></a></li></ol></div>
             
           </div>
         </section>
