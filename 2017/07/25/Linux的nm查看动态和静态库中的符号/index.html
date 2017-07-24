@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="unix/Linux," />
 
 
 
@@ -84,16 +84,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="description" content="功能列出.o .a .so中的符号信息，包括诸如符号的值，符号类型及符号名称等。所谓符号，通常指定义出的函数，全局变量等等。">
+<meta name="keywords" content="unix&#x2F;Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://eromonstersanji.github.io/2017/07/11/hello-world/index.html">
+<meta property="og:title" content="Linux的nm查看动态和静态库中的符号">
+<meta property="og:url" content="http://eromonstersanji.github.io/2017/07/25/Linux的nm查看动态和静态库中的符号/index.html">
 <meta property="og:site_name" content="EroMonsterSanji">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta property="og:updated_time" content="2017-07-10T21:13:45.000Z">
+<meta property="og:description" content="功能列出.o .a .so中的符号信息，包括诸如符号的值，符号类型及符号名称等。所谓符号，通常指定义出的函数，全局变量等等。">
+<meta property="og:updated_time" content="2017-07-24T23:01:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="Linux的nm查看动态和静态库中的符号">
+<meta name="twitter:description" content="功能列出.o .a .so中的符号信息，包括诸如符号的值，符号类型及符号名称等。所谓符号，通常指定义出的函数，全局变量等等。">
 
 
 
@@ -114,10 +115,10 @@
 
 
 
-  <link rel="canonical" href="http://eromonstersanji.github.io/2017/07/11/hello-world/"/>
+  <link rel="canonical" href="http://eromonstersanji.github.io/2017/07/25/Linux的nm查看动态和静态库中的符号/"/>
 
 
-  <title> Hello World | EroMonsterSanji </title>
+  <title> Linux的nm查看动态和静态库中的符号 | EroMonsterSanji </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="default">
@@ -239,7 +240,7 @@
             
             
               
-                Hello World
+                Linux的nm查看动态和静态库中的符号
               
             
           </h1>
@@ -251,11 +252,30 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-07-11T03:19:17+08:00" content="2017-07-11">
-              2017-07-11
+            <time itemprop="dateCreated" datetime="2017-07-25T06:50:45+08:00" content="2017-07-25">
+              2017-07-25
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/unix-linux/" itemprop="url" rel="index">
+                    <span itemprop="name">unix/linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -279,16 +299,51 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+        <h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>列出<code>.o</code> <code>.a</code> <code>.so</code>中的符号信息，包括诸如符号的值，符号类型及符号名称等。所谓符号，通常指定义出的函数，全局变量等等。</p>
 <a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nm [option(s)] [file(s)]</div></pre></td></tr></table></figure>
+<h3 id="有用的options"><a href="#有用的options" class="headerlink" title="有用的options:"></a>有用的options:</h3><ul>
+<li><p><code>-A</code> 在每个符号信息的前面打印所在对象文件名称；</p>
+</li>
+<li><p><code>-C</code> 输出demangle过了的符号名称；</p>
+</li>
+<li><p><code>-D</code> 打印动态符号；</p>
+</li>
+<li><p><code>-l</code> 使用对象文件中的调试信息打印出所在源文件及行号；</p>
+</li>
+<li><p><code>-n</code> 按照地址/符号值来排序；</p>
+</li>
+<li><p><code>-u</code> 打印出那些未定义的符号；</p>
+</li>
+</ul>
+<p>常见的符号类型:</p>
+<ul>
+<li><p><code>A</code> 该符号的值在今后的链接中将不再改变；</p>
+</li>
+<li><p><code>B</code> 该符号放在BSS段中，通常是那些未初始化的全局变量；</p>
+</li>
+<li><p><code>D</code> 该符号放在普通的数据段中，通常是那些已经初始化的全局变量；</p>
+</li>
+<li><p><code>T</code> 该符号放在代码段中，通常是那些全局非静态函数；</p>
+</li>
+<li><p><code>U</code> 该符号未定义过，需要自其他对象文件中链接进来；</p>
+</li>
+<li><p><code>W</code> 未明确指定的弱链接符号；同链接的其他对象文件中有它的定义就用上，否则就用一个系统特别指定的默认值。</p>
+</li>
+</ul>
+<h3 id="注意几点："><a href="#注意几点：" class="headerlink" title="注意几点："></a>注意几点：</h3><ul>
+<li><p><code>-C</code> 总是适用于c++编译出来的对象文件。还记得c++中有重载么？为了区分重载函数，c++编译器会将函数返回值/参数等信息附加到函数名称中去形成一个mangle过的符号，那用这个选项列出符号的时候，做一个逆操作，输出那些原始的、我们可理解的符号名称。</p>
+</li>
+<li><p>使用<code>-l</code>时，必须保证你的对象文件中带有符号调式信息，这一般要求你在编译的时候指定一个<code>-g</code>选项，见 Linux:gcc。</p>
+</li>
+<li><p>使用<code>nm</code>前，最好先用Linux:File查看对象文件所属处理器架构，然后再用相应交叉版本的<code>nm</code>工具。</p>
+</li>
+</ul>
+<h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><p>更详细的内容见man page。这里举例说明：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nm -u hello.o</div></pre></td></tr></table></figure>
+<p>显示hello.o 中的未定义符号，需要和其他对象文件进行链接。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nm -A /usr/lib/* 2&gt;/dev/null | grep <span class="string">"T memset"</span></div></pre></td></tr></table></figure>
+<p>在<code>/usr/lib/</code>目录下找出哪个库文件定义了<code>memset</code>函数。</p>
 
       
     </div>
@@ -309,18 +364,24 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/unix-Linux/" rel="tag">#unix/Linux</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/07/25/Cannot-open-shared-object-file-缺少动态链接库/" rel="next" title="Cannot open shared object file_缺少动态链接库">
+                <i class="fa fa-chevron-left"></i> Cannot open shared object file_缺少动态链接库
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/11/python3-error-while-loading-shared-libraries-libpython3-5m-so-1-0-cannot-open-shared-object-file-No-such-file-or-directory/" rel="prev" title="Python3: error while loading shared libraries">
-                Python3: error while loading shared libraries <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -434,7 +495,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#功能"><span class="nav-number">1.</span> <span class="nav-text">功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有用的options"><span class="nav-number">2.1.</span> <span class="nav-text">有用的options:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意几点："><span class="nav-number">2.2.</span> <span class="nav-text">注意几点：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#举例"><span class="nav-number">2.2.1.</span> <span class="nav-text">举例</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
