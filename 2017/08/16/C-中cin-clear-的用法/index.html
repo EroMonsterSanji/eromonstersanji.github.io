@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="unix/linux," />
+  <meta name="keywords" content="C/C++," />
 
 
 
@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="功能列出.o .a .so中的符号信息，包括诸如符号的值，符号类型及符号名称等。所谓符号，通常指定义出的函数，全局变量等等。">
-<meta name="keywords" content="unix&#x2F;linux">
+<meta name="description" content="我们谈谈cin.clear的作用,第一次看到这东西,很多人以为就是清空cin里面的数据流,而实际上却与此相差很远,首先我们看看以下代码: 12345678910111213#include &amp;lt;iostream&amp;gt;using namespace std;int main() &amp;#123;    int a;    cin &amp;gt;&amp;gt; a;    cout &amp;lt;&amp;lt; cin.r">
+<meta name="keywords" content="C&#x2F;C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux的nm查看动态和静态库中的符号">
-<meta property="og:url" content="http://eromonstersanji.github.io/2017/07/25/Linux的nm查看动态和静态库中的符号/index.html">
+<meta property="og:title" content="C++中cin.clear()的用法">
+<meta property="og:url" content="http://eromonstersanji.github.io/2017/08/16/C-中cin-clear-的用法/index.html">
 <meta property="og:site_name" content="EroMonsterSanji">
-<meta property="og:description" content="功能列出.o .a .so中的符号信息，包括诸如符号的值，符号类型及符号名称等。所谓符号，通常指定义出的函数，全局变量等等。">
-<meta property="og:updated_time" content="2017-08-03T08:09:55.000Z">
+<meta property="og:description" content="我们谈谈cin.clear的作用,第一次看到这东西,很多人以为就是清空cin里面的数据流,而实际上却与此相差很远,首先我们看看以下代码: 12345678910111213#include &amp;lt;iostream&amp;gt;using namespace std;int main() &amp;#123;    int a;    cin &amp;gt;&amp;gt; a;    cout &amp;lt;&amp;lt; cin.r">
+<meta property="og:updated_time" content="2017-08-15T17:57:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux的nm查看动态和静态库中的符号">
-<meta name="twitter:description" content="功能列出.o .a .so中的符号信息，包括诸如符号的值，符号类型及符号名称等。所谓符号，通常指定义出的函数，全局变量等等。">
+<meta name="twitter:title" content="C++中cin.clear()的用法">
+<meta name="twitter:description" content="我们谈谈cin.clear的作用,第一次看到这东西,很多人以为就是清空cin里面的数据流,而实际上却与此相差很远,首先我们看看以下代码: 12345678910111213#include &amp;lt;iostream&amp;gt;using namespace std;int main() &amp;#123;    int a;    cin &amp;gt;&amp;gt; a;    cout &amp;lt;&amp;lt; cin.r">
 
 
 
@@ -115,10 +115,10 @@
 
 
 
-  <link rel="canonical" href="http://eromonstersanji.github.io/2017/07/25/Linux的nm查看动态和静态库中的符号/"/>
+  <link rel="canonical" href="http://eromonstersanji.github.io/2017/08/16/C-中cin-clear-的用法/"/>
 
 
-  <title> Linux的nm查看动态和静态库中的符号 | EroMonsterSanji </title>
+  <title> C++中cin.clear()的用法 | EroMonsterSanji </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="default">
@@ -240,7 +240,7 @@
             
             
               
-                Linux的nm查看动态和静态库中的符号
+                C++中cin.clear()的用法
               
             
           </h1>
@@ -252,8 +252,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-07-25T06:50:45+08:00" content="2017-07-25">
-              2017-07-25
+            <time itemprop="dateCreated" datetime="2017-08-16T01:47:37+08:00" content="2017-08-16">
+              2017-08-16
             </time>
           </span>
 
@@ -266,8 +266,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/unix-linux/" itemprop="url" rel="index">
-                    <span itemprop="name">unix/linux</span>
+                  <a href="/categories/C-C/" itemprop="url" rel="index">
+                    <span itemprop="name">C/C++</span>
                   </a>
                 </span>
 
@@ -299,52 +299,22 @@
       
 
       
-        <h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>列出<code>.o</code> <code>.a</code> <code>.so</code>中的符号信息，包括诸如符号的值，符号类型及符号名称等。所谓符号，通常指定义出的函数，全局变量等等。</p>
-<a id="more"></a>
-<h3 id="Notice"><a href="#Notice" class="headerlink" title="Notice:"></a>Notice:</h3><p>The macOS edition does’t support <code>-C</code> argument.</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nm [option(s)] [file(s)]</div></pre></td></tr></table></figure>
-<h3 id="有用的options"><a href="#有用的options" class="headerlink" title="有用的options:"></a>有用的options:</h3><ul>
-<li><p><code>-A</code> 在每个符号信息的前面打印所在对象文件名称；</p>
-</li>
-<li><p><code>-C</code> 输出demangle过了的符号名称；</p>
-</li>
-<li><p><code>-D</code> 打印动态符号；</p>
-</li>
-<li><p><code>-l</code> 使用对象文件中的调试信息打印出所在源文件及行号；</p>
-</li>
-<li><p><code>-n</code> 按照地址/符号值来排序；</p>
-</li>
-<li><p><code>-u</code> 打印出那些未定义的符号；</p>
-</li>
-</ul>
-<p>常见的符号类型:</p>
+        <p>我们谈谈cin.clear的作用,第一次看到这东西,很多人以为就是清空cin里面的数据流,而实际上却与此相差很远,首先我们看看以下代码:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> a;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; a;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">cin</span>.rdstate() &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">if</span> (<span class="built_in">cin</span>.rdstate() == ios::goodbit) &#123;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"输入数据的类型正确，无错误！"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (<span class="built_in">cin</span>.rdstate() == ios_base::failbit) &#123;</div><div class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"输入数据类型错误，非致命错误，可清除输入缓冲区挽回！"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们定义要输入到的变量是整型,但如果我们输入了英文字母或者汉字,那就会发生错误,<code>cin</code>里有个方法能检测这个错误,就是<code>cin.rdstate()</code>;</p>
+<p> 当<code>cin.rdstate()</code>返回0(即<code>ios::goodbit</code>)时表示无错误,可以继续输入或者操作,若返回4则发生非致命错误即<code>ios::failbit</code>,则不能继续输入或操作.而<code>cin.clear</code>则可以控制我们此时<code>cin</code>里对这个问题的一个标识。</p>
+<p> 语法如下: <code>cin.clear(标识符);</code> 标识符号为:</p>
 <ul>
-<li><p><code>A</code> 该符号的值在今后的链接中将不再改变；</p>
-</li>
-<li><p><code>B</code> 该符号放在BSS段中，通常是那些未初始化的全局变量；</p>
-</li>
-<li><p><code>D</code> 该符号放在普通的数据段中，通常是那些已经初始化的全局变量；</p>
-</li>
-<li><p><code>T</code> 该符号放在代码段中，通常是那些全局非静态函数；</p>
-</li>
-<li><p><code>U</code> 该符号未定义过，需要自其他对象文件中链接进来；</p>
-</li>
-<li><p><code>W</code> 未明确指定的弱链接符号；同链接的其他对象文件中有它的定义就用上，否则就用一个系统特别指定的默认值。</p>
-</li>
+<li><code>goodbit</code> 无错误</li>
+<li><code>Eofbit</code> 已到达文件尾</li>
+<li><code>failbit</code> 非致命的输入/输出错误，可挽回</li>
+<li><code>badbit</code>　致命的输入/输出错误,无法挽回 若在输入输出类里.需要加ios::标识符号</li>
 </ul>
-<h3 id="注意几点："><a href="#注意几点：" class="headerlink" title="注意几点："></a>注意几点：</h3><ul>
-<li><p><code>-C</code> 总是适用于c++编译出来的对象文件。还记得c++中有重载么？为了区分重载函数，c++编译器会将函数返回值/参数等信息附加到函数名称中去形成一个mangle过的符号，那用这个选项列出符号的时候，做一个逆操作，输出那些原始的、我们可理解的符号名称。</p>
-</li>
-<li><p>使用<code>-l</code>时，必须保证你的对象文件中带有符号调式信息，这一般要求你在编译的时候指定一个<code>-g</code>选项，见 Linux:gcc。</p>
-</li>
-<li><p>使用<code>nm</code>前，最好先用Linux:File查看对象文件所属处理器架构，然后再用相应交叉版本的<code>nm</code>工具。</p>
-</li>
-</ul>
-<h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><p>更详细的内容见man page。这里举例说明：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nm -u hello.o</div></pre></td></tr></table></figure>
-<p>显示hello.o 中的未定义符号，需要和其他对象文件进行链接。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nm -A /usr/lib/* 2&gt;/dev/null | grep <span class="string">"T memset"</span></div></pre></td></tr></table></figure>
-<p>在<code>/usr/lib/</code>目录下找出哪个库文件定义了<code>memset</code>函数。</p>
+<p>通过<code>cin.clear</code>,我们能确认它的内部标识符,如果输入错误则能重新输入.结合真正的清空数据流方法<code>cin.sync()</code>,请看下例:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> a;</div><div class="line">    <span class="keyword">while</span>(<span class="number">1</span>) &#123;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; a;</div><div class="line">        <span class="keyword">if</span> (!<span class="built_in">cin</span>) &#123;</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"输入有错!请重新输入"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">            <span class="built_in">cin</span>.clear();</div><div class="line">            <span class="built_in">cin</span>.sync();</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="built_in">cout</span> &lt;&lt; a;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的<code>cin.clear()</code>默认参数为0,即无错误,正常操作。</p>
+<p>当我们输入英文字母<code>&#39;k&#39;</code>时，它的状态标识改为<code>fail</code>，即错误，用<code>cout</code>对用户输出信息,再用<code>cin.clear</code>让错误标识改回为0,让我们可以继续输入,再清空流数据继续输入.</p>
+<p>如果我们没有了<code>cin.clear</code>,则会进入死循环,其过程为我们输入了英文字母,它的状态标识便为<code>fail</code>,当运行到条件判断时,便总是回到错误的条件表示里,并且我们再也没办法输入,因为错误的表示关闭了<code>cin</code>,所以会进入死循环.</p>
 
       
     </div>
@@ -367,7 +337,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/unix-linux/" rel="tag">#unix/linux</a>
+            <a href="/tags/C-C/" rel="tag">#C/C++</a>
           
         </div>
       
@@ -376,17 +346,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/25/Cannot-open-shared-object-file-缺少动态链接库/" rel="next" title="Cannot open shared object file_缺少动态链接库">
-                <i class="fa fa-chevron-left"></i> Cannot open shared object file_缺少动态链接库
+              <a href="/2017/07/25/Linux的nm查看动态和静态库中的符号/" rel="next" title="Linux的nm查看动态和静态库中的符号">
+                <i class="fa fa-chevron-left"></i> Linux的nm查看动态和静态库中的符号
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/16/C-中cin-clear-的用法/" rel="prev" title="C++中cin.clear()的用法">
-                C++中cin.clear()的用法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -500,7 +466,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#功能"><span class="nav-number">1.</span> <span class="nav-text">功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Notice"><span class="nav-number">1.1.</span> <span class="nav-text">Notice:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有用的options"><span class="nav-number">2.1.</span> <span class="nav-text">有用的options:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意几点："><span class="nav-number">2.2.</span> <span class="nav-text">注意几点：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#举例"><span class="nav-number">2.2.1.</span> <span class="nav-text">举例</span></a></li></ol></li></ol></li></ol></div>
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
             
           </div>
         </section>
