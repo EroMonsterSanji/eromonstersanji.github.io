@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="nginx基本入门 原文链接为 nginx Beginner’s Guide  这篇教程简单介绍了 nginx 并且讲解了一些 nginx 可以解决的简单任务。这里，我们假设 nginx 已经安装在读者的机器上。如果没有，可以看一下如何安装 nginx。这篇教程主要讲解的是如果启用和停止ngixn，和重新加载配置，描述配置文件的基本结构和怎样搭建一个 nginx 静态辅助器，怎样配置 nginx">
+<meta name="description" content="nginx基本入门">
 <meta name="keywords" content="unix&#x2F;linux,nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nginx documentation">
 <meta property="og:url" content="http://eromonstersanji.github.io/2017/08/20/nginx基本入门/index.html">
 <meta property="og:site_name" content="EroMonsterSanji">
-<meta property="og:description" content="nginx基本入门 原文链接为 nginx Beginner’s Guide  这篇教程简单介绍了 nginx 并且讲解了一些 nginx 可以解决的简单任务。这里，我们假设 nginx 已经安装在读者的机器上。如果没有，可以看一下如何安装 nginx。这篇教程主要讲解的是如果启用和停止ngixn，和重新加载配置，描述配置文件的基本结构和怎样搭建一个 nginx 静态辅助器，怎样配置 nginx">
-<meta property="og:updated_time" content="2017-08-21T11:12:56.000Z">
+<meta property="og:description" content="nginx基本入门">
+<meta property="og:updated_time" content="2017-08-21T11:18:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx documentation">
-<meta name="twitter:description" content="nginx基本入门 原文链接为 nginx Beginner’s Guide  这篇教程简单介绍了 nginx 并且讲解了一些 nginx 可以解决的简单任务。这里，我们假设 nginx 已经安装在读者的机器上。如果没有，可以看一下如何安装 nginx。这篇教程主要讲解的是如果启用和停止ngixn，和重新加载配置，描述配置文件的基本结构和怎样搭建一个 nginx 静态辅助器，怎样配置 nginx">
+<meta name="twitter:description" content="nginx基本入门">
 
 
 
@@ -311,9 +311,7 @@
       
 
       
-        <h3 id="nginx基本入门"><a href="#nginx基本入门" class="headerlink" title="nginx基本入门"></a>nginx基本入门</h3><blockquote>
-<p>原文链接为 <a href="http://nginx.org/en/docs/beginners_guide.html" target="_blank" rel="external">nginx Beginner’s Guide</a></p>
-</blockquote>
+        <h3 id="nginx基本入门"><a href="#nginx基本入门" class="headerlink" title="nginx基本入门"></a>nginx基本入门</h3><a id="more"></a>
 <p>这篇教程简单介绍了 nginx 并且讲解了一些 nginx 可以解决的简单任务。这里，我们假设 nginx 已经安装在读者的机器上。如果没有，可以看一下如何安装 nginx。这篇教程主要讲解的是如果启用和停止ngixn，和重新加载配置，描述配置文件的基本结构和怎样搭建一个 nginx 静态辅助器，怎样配置 nginx 作为一个代理服务器来。 nginx 有一个主进程和其他子进程。主进程的主要工作是加载和执行配置文件，并且驻留子进程。子进程用来作为实际的请求处理。nginx 采取基于事件的模型和 OS 依赖的机制，在多个子进程之间高效的分配请求。子进程的个数会直接写在配置文件中并且，对于给定的配置可以是固定的，或者根据可用的 CPU 核数自动的进行调整（参考 子进程）。 nginx 和它模块的工作方式是在配置文件中写好的。默认情况下，这个配置文件通常命名为 nginx.conf 并且会放置在 <code>/usr/local/nginx/conf</code>，<code>/etc/nginx</code>，或者 <code>/usr/local/etc/nginx</code>。</p>
 <h3 id="启用，停止和重载配置"><a href="#启用，停止和重载配置" class="headerlink" title="启用，停止和重载配置"></a>启用，停止和重载配置</h3><p>运行可执行文件就可以开启 nginx，比如:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// -c 为 nginx 的配置文件</div><div class="line">nginx -c /usr/<span class="built_in">local</span>/nginx/conf/nginx.conf</div></pre></td></tr></table></figure>
@@ -354,6 +352,9 @@
 <p>该参数是一个正则表达式，它会匹配所有以 .gif，.jpg 或者 .png 结尾的 URIs。一个正则表达式需要以 ~ 开头。匹配到的请求会被映射到 /data/images 目录下。 当 nginx 在选择 location 去响应一个请求时，它会先检测带有前缀的 location 指令，记住先是检测带有最长前缀的 location，然后检测正则表达式。如果有一个正则的匹配的规则，nginx 会选择该 location，否则，会选择之前缓存的规则。 最终，一个代理服务器的配置结果如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    location / &#123;</div><div class="line">        proxy_pass http://localhost:8080/;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    location ~ \.(gif|jpg|png)$ &#123;</div><div class="line">        root /data/images;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>该服务器会选择以 .gif，.jpg，或者 .png 结束的请求并且映射到 /data/images 目录（通过添加 URI 给 root 指令的参数），接着将其他所有的请求映射到上述被代理的服务器。 为了使用新的配置，像前几个章节描述的一样，需要向 nginx 发送重载信号。 这还有很多其他的指令，可以用于进一步配置代理连接。</p>
+<blockquote>
+<p>原文链接为 <a href="http://nginx.org/en/docs/beginners_guide.html" target="_blank" rel="external">nginx Beginner’s Guide</a></p>
+</blockquote>
 
       
     </div>
