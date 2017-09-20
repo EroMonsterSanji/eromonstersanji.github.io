@@ -241,6 +241,158 @@
             
               
                 
+                <a class="post-title-link" href="/2017/09/20/C-11：左值引用-VS-右值引用/" itemprop="url">
+                  C++11：左值引用 VS 右值引用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-09-20T13:54:57+08:00" content="2017-09-20">
+              2017-09-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/C-C/" itemprop="url" rel="index">
+                    <span itemprop="name">C/C++</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <!-- 转载自http://blog.csdn.net/lg1259156776/article/details/77992633 -->
+<h1 id="左值引用-VS-右值引用"><a href="#左值引用-VS-右值引用" class="headerlink" title="左值引用 VS 右值引用"></a>左值引用 VS 右值引用</h1><h2 id="左值-VS-右值"><a href="#左值-VS-右值" class="headerlink" title="左值 VS 右值"></a>左值 VS 右值</h2><p>在定义变量的时候，经常会用到左值和右值，比如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">int</span> b = a + <span class="number">1</span>;</div></pre></td></tr></table></figure>
+<p>上面这段代码，a先作为左值，在作为右值。在作为右值的时候，是相当于（原理上等同，但不一定对）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">tmp</span><span class="params">(a + <span class="number">1</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">b</span><span class="params">(tmp)</span></span>;</div></pre></td></tr></table></figure>
+<p>中间会先建立一个临时遍历，然后在把临时遍历赋值给b。对于数，只能作为左值，而变量名，即可以作为左值又可以作为右值。（作为左值的时候相当于用该变量的地址，作为右值的时候则相当于使用该变量的内容，这里对于类对象也成立）。</p>
+<hr>
+<h2 id="左值引用"><a href="#左值引用" class="headerlink" title="左值引用"></a>左值引用</h2><blockquote>
+<p>用法：<code>Type &amp; 左值引用名 = 左值表达式；</code></p>
+</blockquote>
+<p>注意点：声明时必须初始化，初始化之后无法在改变；对别名的一切操作都等价于对原来变量的操作。</p>
+<p>左值引用在传递参数的时候，和指针特别类似，如以下代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> val = <span class="number">10</span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> * ptr)</span></span>&#123; <span class="built_in">cout</span>&lt;&lt;*ptr&lt;&lt;<span class="built_in">endl</span>; *ptr += <span class="number">1</span>; &#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> &amp; value)</span></span>&#123; <span class="built_in">cout</span>&lt;&lt;value&lt;&lt;<span class="built_in">endl</span>; a += <span class="number">1</span>; &#125;</div><div class="line">fun(val);</div><div class="line">fun(&amp;val);</div></pre></td></tr></table></figure>
+<p>上面的两种<code>fun()</code>的调用方法，在函数体内的修改都可以引起<code>val</code>的改变。（简单的理解，不一定完全正确：左值引用和指针都相当于是通过地址来访问具体的值，因此可以修改）</p>
+<h3 id="const修饰左值引用"><a href="#const修饰左值引用" class="headerlink" title="const修饰左值引用"></a>const修饰左值引用</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> &amp; r = val + <span class="number">1</span>;          <span class="comment">//此句不合法，因为右值无法赋值给左值引用</span></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span>&amp; r = val + <span class="number">1</span>；    <span class="comment">//合法</span></div></pre></td></tr></table></figure>
+<p><strong>解释</strong>：资料说c++中临时变量默认const属性，所以只能传给const的引用。规定右值不能绑定到<code>非 const</code>限定的左值引用。</p>
+<p>异常对象另说；如果是右值引用或const左值引用绑定的，那生存期延长为引用；否则到完全表达式结束销毁。还有默认初始化数组元素时延长到数组初始化结束。（摘抄自其网页）</p>
+<hr>
+<h3 id="右值引用"><a href="#右值引用" class="headerlink" title="右值引用"></a>右值引用</h3><p>在上面的代码中，我们无法建立<code>int &amp;rb = a + 1;</code>这样的语法，因为<code>a + 1</code>此时是作为一个右值来使用的，我们无法把一个右值赋值给一个左值引用。（也就是左值引用相当于把一个变量的地址付给另一个变量，这两个变量可以访问同一个内存，右值仅仅是一个数，而非内存中的某块地址，因此无法把右值复制给左值引用）。</p>
+<p>声明方法：<code>Type &amp;&amp; 右值引用名 = 右值表达式；</code></p>
+<h3 id="std-move-的用法"><a href="#std-move-的用法" class="headerlink" title="std::move()的用法"></a><code>std::move()</code>的用法</h3><p>可以直接把左值或者右值转换成右值引用，使用方法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> &amp;&amp; rrval = <span class="built_in">std</span>::move(val);</div></pre></td></tr></table></figure>
+<p>但是这里需要注意：在调用完<code>std::move()</code>之后，不能再使用<code>val</code>，只能使用 <code>rrval</code>，这一点用于基本类型可能没什么直接影响，当应用到类函数的时候，用好<code>std::move()</code>可以减少构造函数数的次数，具体的使用参考下面的<code>std::move()</code>比较好的理解。</p>
+<p>下面说一下自己的理解：</p>
+<p>首先是由于STL里面默认的库已经支持右值引用，也有所谓的移动构造函数如下面的形式<code>A (A&amp;&amp; a){}</code>这里不能使用<code>const A&amp;&amp; a</code>，因为需要改变<code>a</code>。移动构造函数主要的用途是，当你不需要在使用一个变量的时候，可以直接通过该构造函数来实现把该变量的数据转换到另一个变量中，省去调用默认的赋值构造或者拷贝构造函数带来额外的开销，如<code>string类</code>在赋值或者拷贝构造函数中会声明char数组来存放数据，然后把原<code>string</code>中的<code>char</code>数组被析构函数释放，如果<code>a</code>是一个临时变量，则上面的拷贝，析构就是多余的，完全可以把临时变量<code>a</code>中的数据直接 “转移” 到新的变量下面即可。 如下面的程序（摘抄自网页）：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;utility&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">string</span> str = <span class="string">"Hello"</span>;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="built_in">std</span>::<span class="built_in">string</span>&gt; v;</div><div class="line">    <span class="comment">//调用常规的拷贝构造函数，新建字符数组，拷贝数据</span></div><div class="line">    v.push_back(str);</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"After copy, str is \""</span> &lt;&lt; str &lt;&lt; <span class="string">"\"\n"</span>;</div><div class="line">    <span class="comment">//调用移动构造函数，掏空str，掏空后，最好不要使用str</span></div><div class="line">    v.push_back(<span class="built_in">std</span>::move(str));</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"After move, str is \""</span> &lt;&lt; str &lt;&lt; <span class="string">"\"\n"</span>;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"The contents of the vector are \""</span> &lt;&lt; v[<span class="number">0</span>]</div><div class="line">              &lt;&lt; <span class="string">"\", \""</span> &lt;&lt; v[<span class="number">1</span>] &lt;&lt; <span class="string">"\"\n"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>其实这个右值引用主要的用处就是在于配合std::move来实现 “转移语句”<br>A();//默认构造函数<br>A(const A&amp; a);//拷贝构造函数<br>oprator=(const A&amp; a);//赋值构造函数<br>A(A&amp;&amp; a);//移动构造函数<br>可以在移动构造函数中实现 把a的数据直接转移到 新的变量b下面，而省去 申请声明一个变量b， 把 copy a-&gt;b， 然后释放 a<br>的空间。<br>比如，string str = “hello”; 现在str不在使用了，但需要声明一个新的变量表示str， 此时就可以用 string newstr(str::move(str)); 调用移动构造函数，把str下面的内容全部转移到 newstr下面，“掏空”str，这里需要注意掏空str之后，最好就不要在使用str了。（有点啰嗦了）</p>
+<h3 id="注释："><a href="#注释：" class="headerlink" title="注释："></a>注释：</h3><p>赋值构造函数<code>A &amp; operator = (const A&amp; a);</code>这里返回<code>A &amp;</code>是为了进行连等<code>a1 = a2 = a3</code>，当一个变量已经被定义之后，改变值的时候调用该函数。</p>
+<p>拷贝构造函数<code>A(const A&amp;a);</code>直接在定义声明一个对象的时候，依据另一个对象来构造。</p>
+<hr>
+<h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><p><a href="http://www.cnblogs.com/catch/p/3500678.html" target="_blank" rel="external">左值右值定义</a></p>
+<p><a href="http://blog.sina.com.cn/s/blog_7fe1e77b01016okx.html" target="_blank" rel="external">右值表达式VS左值表达式</a></p>
+<p><a href="http://www.linuxidc.com/Linux/2015-02/114056.htm" target="_blank" rel="external">左值引用和右值引用</a></p>
+<p><a href="http://blog.csdn.net/zwvista/article/details/12306283" target="_blank" rel="external">右值引用</a></p>
+<p><a href="http://blog.csdn.net/liuxialong/article/details/6539717" target="_blank" rel="external">临时对象不能绑定到非const左值引用上</a></p>
+<p><a href="http://blog.csdn.net/feeltouch/article/details/9789731" target="_blank" rel="external">临时对象以及const引用详解</a></p>
+<hr>
+<h3 id="std-move-用法理解"><a href="#std-move-用法理解" class="headerlink" title="std::move()用法理解:"></a><code>std::move()</code>用法理解:</h3><p><a href="http://www.cnblogs.com/chezxiaoqiang/archive/2012/10/24/2736630.html" target="_blank" rel="external">std::move比较好的解释</a></p>
+<p>另外三篇关于<code>std::move()</code>的用法：</p>
+<p><a href="http://blog.csdn.net/yapian8/article/details/42341307" target="_blank" rel="external">上</a><br><a href="http://blog.csdn.net/yapian8/article/details/42341321" target="_blank" rel="external">中</a><br><a href="http://blog.csdn.net/yapian8/article/details/42341351" target="_blank" rel="external">下</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/08/21/Setting-up-PHP-hehind-Nginx-with-FastCGI/" itemprop="url">
                   Setting up PHP hehind Nginx with FastCGI
                 </a>
@@ -1271,121 +1423,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/13/usual-exceptions-in-C/" itemprop="url">
-                  Usual exceptions in C/C++
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-07-13T03:09:49+08:00" content="2017-07-13">
-              2017-07-13
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/C-C/" itemprop="url" rel="index">
-                    <span itemprop="name">C/C++</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Some-exceptions-may-occur-while-C-C-coding"><a href="#Some-exceptions-may-occur-while-C-C-coding" class="headerlink" title="Some exceptions may occur while C/C++ coding:"></a>Some exceptions may occur while C/C++ coding:</h2>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/07/13/usual-exceptions-in-C/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1431,7 +1468,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
