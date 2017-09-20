@@ -91,7 +91,7 @@
 <meta property="og:url" content="http://eromonstersanji.github.io/2017/09/20/C-11：左值引用-VS-右值引用/index.html">
 <meta property="og:site_name" content="EroMonsterSanji">
 <meta property="og:description" content="左值引用 VS 右值引用">
-<meta property="og:updated_time" content="2017-09-20T07:09:44.000Z">
+<meta property="og:updated_time" content="2017-09-20T08:06:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++11：左值引用 VS 右值引用">
 <meta name="twitter:description" content="左值引用 VS 右值引用">
@@ -305,7 +305,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">int</span> b = a + <span class="number">1</span>;</div></pre></td></tr></table></figure>
 <p>上面这段代码，a先作为左值，在作为右值。在作为右值的时候，是相当于（原理上等同，但不一定对）</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">tmp</span><span class="params">(a + <span class="number">1</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">b</span><span class="params">(tmp)</span></span>;</div></pre></td></tr></table></figure>
-<p>中间会先建立一个临时遍历，然后在把临时遍历赋值给b。对于数，只能作为左值，而变量名，即可以作为左值又可以作为右值。（作为左值的时候相当于用该变量的地址，作为右值的时候则相当于使用该变量的内容，这里对于类对象也成立）。</p>
+<p>中间会先建立一个临时遍历，然后在把临时遍历赋值给b。对于数，只能作为右值；而变量名，即可以作为左值又可以作为右值。（作为左值的时候相当于用该变量的地址，作为右值的时候则相当于使用该变量的内容，这里对于类对象也成立）。</p>
 <hr>
 <h2 id="左值引用"><a href="#左值引用" class="headerlink" title="左值引用"></a>左值引用</h2><blockquote>
 <p>用法：<code>Type &amp; 左值引用名 = 左值表达式；</code></p>
