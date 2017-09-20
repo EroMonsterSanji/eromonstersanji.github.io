@@ -91,7 +91,7 @@
 <meta property="og:url" content="http://eromonstersanji.github.io/2017/09/20/C-11：左值引用-VS-右值引用/index.html">
 <meta property="og:site_name" content="EroMonsterSanji">
 <meta property="og:description" content="左值引用 VS 右值引用">
-<meta property="og:updated_time" content="2017-09-20T07:00:25.000Z">
+<meta property="og:updated_time" content="2017-09-20T07:09:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++11：左值引用 VS 右值引用">
 <meta name="twitter:description" content="左值引用 VS 右值引用">
@@ -326,7 +326,10 @@
 <p>下面说一下自己的理解：</p>
 <p>首先是由于STL里面默认的库已经支持右值引用，也有所谓的移动构造函数如下面的形式<code>A (A&amp;&amp; a){}</code>这里不能使用<code>const A&amp;&amp; a</code>，因为需要改变<code>a</code>。移动构造函数主要的用途是，当你不需要在使用一个变量的时候，可以直接通过该构造函数来实现把该变量的数据转换到另一个变量中，省去调用默认的赋值构造或者拷贝构造函数带来额外的开销，如<code>string类</code>在赋值或者拷贝构造函数中会声明char数组来存放数据，然后把原<code>string</code>中的<code>char</code>数组被析构函数释放，如果<code>a</code>是一个临时变量，则上面的拷贝，析构就是多余的，完全可以把临时变量<code>a</code>中的数据直接 “转移” 到新的变量下面即可。 如下面的程序（摘抄自网页）：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;utility&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">string</span> str = <span class="string">"Hello"</span>;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="built_in">std</span>::<span class="built_in">string</span>&gt; v;</div><div class="line">    <span class="comment">//调用常规的拷贝构造函数，新建字符数组，拷贝数据</span></div><div class="line">    v.push_back(str);</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"After copy, str is \""</span> &lt;&lt; str &lt;&lt; <span class="string">"\"\n"</span>;</div><div class="line">    <span class="comment">//调用移动构造函数，掏空str，掏空后，最好不要使用str</span></div><div class="line">    v.push_back(<span class="built_in">std</span>::move(str));</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"After move, str is \""</span> &lt;&lt; str &lt;&lt; <span class="string">"\"\n"</span>;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"The contents of the vector are \""</span> &lt;&lt; v[<span class="number">0</span>]</div><div class="line">              &lt;&lt; <span class="string">"\", \""</span> &lt;&lt; v[<span class="number">1</span>] &lt;&lt; <span class="string">"\"\n"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>其实这个右值引用主要的用处就是在于配合std::move来实现 “转移语句”<br>A();//默认构造函数<br>A(const A&amp; a);//拷贝构造函数<br>oprator=(const A&amp; a);//赋值构造函数<br>A(A&amp;&amp; a);//移动构造函数<br>可以在移动构造函数中实现 把a的数据直接转移到 新的变量b下面，而省去 申请声明一个变量b， 把 copy a-&gt;b， 然后释放 a<br>的空间。<br>比如，string str = “hello”; 现在str不在使用了，但需要声明一个新的变量表示str， 此时就可以用 string newstr(str::move(str)); 调用移动构造函数，把str下面的内容全部转移到 newstr下面，“掏空”str，这里需要注意掏空str之后，最好就不要在使用str了。（有点啰嗦了）</p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>其实这个右值引用主要的用处就是在于配合<code>std::move()</code>来实现 “转移语句”</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">A();<span class="comment">//默认构造函数</span></div><div class="line">A(<span class="keyword">const</span> A&amp; a);<span class="comment">//拷贝构造函数</span></div><div class="line">oprator=(<span class="keyword">const</span> A&amp; a);<span class="comment">//赋值构造函数</span></div><div class="line">A(A&amp;&amp; a);<span class="comment">//移动构造函数</span></div></pre></td></tr></table></figure>
+<p>可以在移动构造函数中实现 把<code>a</code>的数据直接转移到新的变量<code>b</code>下面，而省去申请声明一个变量<code>b</code>， 把<code>copy a-&gt;b</code>，然后释放<code>a</code>的空间。</p>
+<p>比如，<code>string str = “hello&quot;;</code>现在<code>str</code>不在使用了，但需要声明一个新的变量表示<code>str</code>， 此时就可以用<code>string newstr(str::move(str));</code>调用移动构造函数，把<code>str</code>下面的内容全部转移到 <code>newstr</code>下面，“掏空”<code>str</code>，这里需要注意掏空<code>str</code>之后，最好就不要在使用<code>str</code>了。（有点啰嗦了）</p>
 <h3 id="注释："><a href="#注释：" class="headerlink" title="注释："></a>注释：</h3><p>赋值构造函数<code>A &amp; operator = (const A&amp; a);</code>这里返回<code>A &amp;</code>是为了进行连等<code>a1 = a2 = a3</code>，当一个变量已经被定义之后，改变值的时候调用该函数。</p>
 <p>拷贝构造函数<code>A(const A&amp;a);</code>直接在定义声明一个对象的时候，依据另一个对象来构造。</p>
 <hr>
@@ -378,6 +381,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/20/C-构造函数/" rel="prev" title="C++构造函数">
+                C++构造函数 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -445,7 +452,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
