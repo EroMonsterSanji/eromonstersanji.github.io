@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="unix/linux,python," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,17 +84,15 @@
 
 
 
-<meta name="description" content="Installing python3 errors raise：">
-<meta name="keywords" content="unix&#x2F;linux,python">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Python3: error while loading shared libraries">
-<meta property="og:url" content="http://eromonstersanji.github.io/2017/07/11/python3-error-while-loading-shared-libraries-libpython3-5m-so-1-0-cannot-open-shared-object-file-No-such-file-or-directory/index.html">
+<meta name="description" content="Personal blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="EroMonsterSanji">
+<meta property="og:url" content="http://eromonstersanji.github.io/archives/2017/09/index.html">
 <meta property="og:site_name" content="EroMonsterSanji">
-<meta property="og:description" content="Installing python3 errors raise：">
-<meta property="og:updated_time" content="2017-07-24T19:00:53.000Z">
+<meta property="og:description" content="Personal blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python3: error while loading shared libraries">
-<meta name="twitter:description" content="Installing python3 errors raise：">
+<meta name="twitter:title" content="EroMonsterSanji">
+<meta name="twitter:description" content="Personal blog">
 
 
 
@@ -115,10 +113,10 @@
 
 
 
-  <link rel="canonical" href="http://eromonstersanji.github.io/2017/07/11/python3-error-while-loading-shared-libraries-libpython3-5m-so-1-0-cannot-open-shared-object-file-No-such-file-or-directory/"/>
+  <link rel="canonical" href="http://eromonstersanji.github.io/archives/2017/09/"/>
 
 
-  <title> Python3: error while loading shared libraries | EroMonsterSanji </title>
+  <title> Archive | EroMonsterSanji </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="default">
@@ -139,7 +137,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  page-archive  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -219,156 +217,66 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
+
+    <span class="archive-page-counter">
+      
+      
+      
+        
+      
+      Um..! 14 posts in total. Keep on posting.
+    </span>
+
     
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                Python3: error while loading shared libraries
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-07-11T04:12:47+08:00" content="2017-07-11">
-              2017-07-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
-      
-        <h3 id="Installing-python3-errors-raise："><a href="#Installing-python3-errors-raise：" class="headerlink" title="Installing python3 errors raise："></a>Installing python3 errors raise：</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ wget https://www.python.org/ftp/python/3.X.X/Python-3.X.X.tgz</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ./configure --prefix=/usr/<span class="built_in">local</span>/Python-3.X.X --<span class="built_in">enable</span>-shared</div><div class="line">$ make</div><div class="line">$ make install</div></pre></td></tr></table></figure>
-<h4 id="Error-raising："><a href="#Error-raising：" class="headerlink" title="Error raising："></a>Error raising：</h4><blockquote>
-<p>python3: error while loading shared libraries: libpython3.Xm.so.1.0: cannot open shared object file: No such file or directory</p>
-</blockquote>
-<h4 id="Solutions："><a href="#Solutions：" class="headerlink" title="Solutions："></a>Solutions：</h4><ol>
-<li>check the dynamic lib<br><code>ldd /usr/local/Python-3.X.X/bin/python3</code></li>
-<li>copy from the source code directory<br><code>cp libpython3.Xm.so.1.0 /usr/lib64/</code></li>
-</ol>
-
-      
-    </div>
-
-    <div>
       
         
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/unix-linux/" rel="tag">#unix/linux</a>
-          
-            <a href="/tags/python/" rel="tag">#python</a>
-          
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
         </div>
       
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/07/11/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/11/tar-command/" rel="prev" title="Tar command">
-                Tar command <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
 
       
-      
-    </footer>
+
+  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2017/09/20/test/" itemprop="url">
+              
+                <span itemprop="name">test</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-09-20T11:09:15+08:00"
+              content="2017-09-20" >
+          09-20
+        </time>
+      </div>
+
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+    
+
+  </section>
+
+  
+
 
 
           </div>
@@ -376,10 +284,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -399,17 +303,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -459,17 +354,6 @@
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Installing-python3-errors-raise："><span class="nav-number">1.</span> <span class="nav-text">Installing python3 errors raise：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Error-raising："><span class="nav-number">1.1.</span> <span class="nav-text">Error raising：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Solutions："><span class="nav-number">1.2.</span> <span class="nav-text">Solutions：</span></a></li></ol></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -566,9 +450,11 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
-
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
 
 
   
