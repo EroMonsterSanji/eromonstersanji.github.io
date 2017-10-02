@@ -241,6 +241,121 @@
             
               
                 
+                <a class="post-title-link" href="/2017/10/03/C-11-Rvalue-reference/" itemprop="url">
+                  C++11 Rvalue reference
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2017-10-03T02:35:13+08:00" content="2017-10-03">
+              2017-10-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/C-C/" itemprop="url" rel="index">
+                    <span itemprop="name">C/C++</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>右值引用是C++11中最重要的新特性之一，它解决了C++中大量的历史遗留问题，使C++标准库的实现在多种场景下消除了不必要的额外开销（如<code>std::vector</code>, <code>std::string</code>)，也使得另外一些标准库（如<code>std::unique_ptr</code>, <code>std::function</code>）成为可能。即使你并不直接使用右值引用，也可以通过标准库，间接从这一新特性中受益。为了更好的理解标准库结合右值引用带来的优化，我们有必要了解一下右值引用的重大意义。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/10/03/C-11-Rvalue-reference/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/09/20/C-构造函数/" itemprop="url">
                   C++构造函数
                 </a>
@@ -1270,125 +1385,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/14/ctrl-c-ctrl-d-ctrl-z在linux中意义/" itemprop="url">
-                  ctrl+c, ctrl+d, ctrl+z 在linux中意义
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-07-14T21:54:06+08:00" content="2017-07-14">
-              2017-07-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/unix-linux/" itemprop="url" rel="index">
-                    <span itemprop="name">unix/linux</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>控制字符都是可以用<code>stty</code>命令更改的。</p>
-<p>用<code>stty -a</code>看看终端配置。</p>
-<p>(本机Mac)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$ stty -a</div><div class="line"></div><div class="line">speed 38400 baud; 25 rows; 80 columns;</div><div class="line">lflags: icanon isig iexten <span class="built_in">echo</span> echoe echok echoke -echonl echoctl</div><div class="line">	-echoprt -altwerase -noflsh -tostop -flusho pendin -nokerninfo</div><div class="line">	-extproc</div><div class="line">iflags: -istrip icrnl -inlcr -igncr ixon -ixoff ixany imaxbel iutf8</div><div class="line">	-ignbrk brkint -inpck -ignpar -parmrk</div><div class="line">oflags: opost onlcr -oxtabs -onocr -onlret</div><div class="line">cflags: cread cs8 -parenb -parodd hupcl -clocal -cstopb -crtscts -dsrflow</div><div class="line">	-dtrflow -mdmbuf</div><div class="line">cchars: discard = ^O; dsusp = ^Y; eof = ^D; eol = &lt;undef&gt;;</div><div class="line">	eol2 = &lt;undef&gt;; erase = ^?; intr = ^C; <span class="built_in">kill</span> = ^U; lnext = ^V;</div><div class="line">	min = 1; quit = ^\; reprint = ^R; start = ^Q; status = ^T;</div><div class="line">	stop = ^S; susp = ^Z; time = 0; werase = ^W;</div></pre></td></tr></table></figure>
-<p><strong><em>ctrl-c</em></strong> 是发送<code>SIGINT</code>信号，终止一个进程</p>
-<p><strong><em>ctrl-z</em></strong> 是发送<code>SIGSTOP</code>信号，挂起一个进程</p>
-<p><strong><em>ctrl-d</em></strong> 不是发送信号，而是表示一个特殊的二进制值，表示<code>EOF</code></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1434,7 +1430,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
