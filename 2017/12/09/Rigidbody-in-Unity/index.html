@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="unix/linux," />
+  <meta name="keywords" content="Unity," />
 
 
 
@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="Removing all *.txt files in current directory except test.txt1rm `ls *.txt|egrep -v test.txt`">
-<meta name="keywords" content="unix&#x2F;linux">
+<meta name="description" content="Rigidbody in unity">
+<meta name="keywords" content="Unity">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Removing files excluding specific files">
-<meta property="og:url" content="http://eromonstersanji.github.io/2017/07/14/removing-files-excluding-specific-files/index.html">
+<meta property="og:title" content="Rigidbody in Unity">
+<meta property="og:url" content="http://eromonstersanji.github.io/2017/12/09/Rigidbody-in-Unity/index.html">
 <meta property="og:site_name" content="EroMonsterSanji">
-<meta property="og:description" content="Removing all *.txt files in current directory except test.txt1rm `ls *.txt|egrep -v test.txt`">
-<meta property="og:updated_time" content="2017-07-24T18:50:49.000Z">
+<meta property="og:description" content="Rigidbody in unity">
+<meta property="og:updated_time" content="2017-12-08T21:11:33.283Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Removing files excluding specific files">
-<meta name="twitter:description" content="Removing all *.txt files in current directory except test.txt1rm `ls *.txt|egrep -v test.txt`">
+<meta name="twitter:title" content="Rigidbody in Unity">
+<meta name="twitter:description" content="Rigidbody in unity">
 
 
 
@@ -115,10 +115,10 @@
 
 
 
-  <link rel="canonical" href="http://eromonstersanji.github.io/2017/07/14/removing-files-excluding-specific-files/"/>
+  <link rel="canonical" href="http://eromonstersanji.github.io/2017/12/09/Rigidbody-in-Unity/"/>
 
 
-  <title> Removing files excluding specific files | EroMonsterSanji </title>
+  <title> Rigidbody in Unity | EroMonsterSanji </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="default">
@@ -240,7 +240,7 @@
             
             
               
-                Removing files excluding specific files
+                Rigidbody in Unity
               
             
           </h1>
@@ -252,30 +252,11 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-07-14T05:58:26+08:00" content="2017-07-14">
-              2017-07-14
+            <time itemprop="dateCreated" datetime="2017-12-09T04:46:52+08:00" content="2017-12-09">
+              2017-12-09
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/unix-linux/" itemprop="url" rel="index">
-                    <span itemprop="name">unix/linux</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
@@ -299,7 +280,17 @@
       
 
       
-        <h2 id="Removing-all-txt-files-in-current-directory-except-test-txt"><a href="#Removing-all-txt-files-in-current-directory-except-test-txt" class="headerlink" title="Removing all *.txt files in current directory except test.txt"></a>Removing all <code>*.txt</code> files in current directory except <code>test.txt</code></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm `ls *.txt|egrep -v test.txt`</div></pre></td></tr></table></figure>
+        <h1 id="Rigidbody-in-unity"><a href="#Rigidbody-in-unity" class="headerlink" title="Rigidbody in unity"></a>Rigidbody in unity</h1><a id="more"></a>
+<hr>
+<h2 id="static-object-VS-dynamic-object"><a href="#static-object-VS-dynamic-object" class="headerlink" title="static object VS dynamic object"></a>static object VS dynamic object</h2><p>As a performace optimisation, Unity calculates all the volumes of all the static colliders in a scene, and holds the information in the cache. This makes sense as <strong><em>static colliders shouldn’t move</em></strong>, and this saves recalculating this information every frame.</p>
+<p>If the static colliders are moving, Unity recalculates the cache and takes resources.</p>
+<p>We can move, rotate or scale dynamic colliders as often as we want and Unity won’t recache any collider volume.</p>
+<blockquote>
+<p>Any game object with a collider and a rigidbody is considered dynamic. A game object with a collider attached but no physics rigidbody is expected to be static.</p>
+</blockquote>
+<hr>
+<h2 id="Is-Kinematic"><a href="#Is-Kinematic" class="headerlink" title="Is Kinematic"></a>Is Kinematic</h2><p>The <code>isKinematic</code> checkbox controls whether physics affects the rigidbody.</p>
+<p>If <code>isKinematic</code> is enabled, <strong><em>Forces, collisions or joints will not affect the rigidbody anymore.</em></strong> The rigidbody will be under full control of animation or script control by changing transform.position. Kinematic bodies also affect the motion of other rigidbodies through collisions or joints.</p>
 
       
     </div>
@@ -322,7 +313,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/unix-linux/" rel="tag">#unix/linux</a>
+            <a href="/tags/Unity/" rel="tag">#Unity</a>
           
         </div>
       
@@ -331,17 +322,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/13/usual-exceptions-in-C/" rel="next" title="Usual exceptions in C/C++">
-                <i class="fa fa-chevron-left"></i> Usual exceptions in C/C++
+              <a href="/2017/12/08/Cmake-Practice/" rel="next" title="Cmake Practice">
+                <i class="fa fa-chevron-left"></i> Cmake Practice
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/14/ctrl-c-ctrl-d-ctrl-z在linux中意义/" rel="prev" title="ctrl+c, ctrl+d, ctrl+z 在linux中意义">
-                ctrl+c, ctrl+d, ctrl+z 在linux中意义 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -455,7 +442,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Removing-all-txt-files-in-current-directory-except-test-txt"><span class="nav-number">1.</span> <span class="nav-text">Removing all *.txt files in current directory except test.txt</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Rigidbody-in-unity"><span class="nav-number">1.</span> <span class="nav-text">Rigidbody in unity</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#static-object-VS-dynamic-object"><span class="nav-number">1.1.</span> <span class="nav-text">static object VS dynamic object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Is-Kinematic"><span class="nav-number">1.2.</span> <span class="nav-text">Is Kinematic</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
