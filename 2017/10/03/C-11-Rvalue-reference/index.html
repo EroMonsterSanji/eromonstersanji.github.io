@@ -91,6 +91,7 @@
 <meta property="og:url" content="http://eromonstersanji.github.io/2017/10/03/C-11-Rvalue-reference/index.html">
 <meta property="og:site_name" content="EroMonsterSanji">
 <meta property="og:description" content="右值引用是C++11中最重要的新特性之一，它解决了C++中大量的历史遗留问题，使C++标准库的实现在多种场景下消除了不必要的额外开销（如std::vector, std::string)，也使得另外一些标准库（如std::unique_ptr, std::function）成为可能。即使你并不直接使用右值引用，也可以通过标准库，间接从这一新特性中受益。为了更好的理解标准库结合右值引用带来的优化，我">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-10-08T16:57:47.812Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++11 Rvalue reference">
@@ -485,7 +486,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -502,7 +503,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -531,7 +532,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#移动语义"><span class="nav-number">1.</span> <span class="nav-text">移动语义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完美转发"><span class="nav-number">2.</span> <span class="nav-text">完美转发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#移动语义"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x79FB;&#x52A8;&#x8BED;&#x4E49;" class="headerlink" title="&#x79FB;&#x52A8;&#x8BED;&#x4E49;"></a>&#x79FB;&#x52A8;&#x8BED;&#x4E49;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完美转发"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x5B8C;&#x7F8E;&#x8F6C;&#x53D1;" class="headerlink" title="&#x5B8C;&#x7F8E;&#x8F6C;&#x53D1;"></a>&#x5B8C;&#x7F8E;&#x8F6C;&#x53D1;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</span></a></li></ol></div>
             
           </div>
         </section>
