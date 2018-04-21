@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="EroMonsterSanji">
 <meta property="og:description" content="Cmake使你不再在构建项目时郁闷地想自杀了。 —— 一位KDE开发者">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-12-08T09:52:55.394Z">
+<meta property="og:updated_time" content="2017-12-08T09:52:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cmake Practice">
 <meta name="twitter:description" content="Cmake使你不再在构建项目时郁闷地想自杀了。 —— 一位KDE开发者">
@@ -382,10 +382,10 @@
 <ol>
 <li><p>准备工作:</p>
 <p> 首先，在/backup 目录建立一个 Cmake 目录，用来放置我们学习过程中的所有练习。</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir -p ~/backup/cmake</div></pre></td></tr></table></figure>
+ <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir -<span class="selector-tag">p</span> ~/backup/cmake</div></pre></td></tr></table></figure>
 <p> 以后我们所有的 Cmake 练习都会放在 <code>~/backup/cmake</code> 的子目录下(你也可以自行安排目录， 这个并不是限制，仅仅是为了叙述的方便)</p>
 <p> 然后在 Cmake 建立第一个练习目录 t1</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir t1</div><div class="line">cd t1</div></pre></td></tr></table></figure>
+ <figure class="highlight dos"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">mkdir</span> t1</div><div class="line"><span class="built_in">cd</span> t1</div></pre></td></tr></table></figure>
 <p> 在 t1 目录建立 <code>main.c</code> 和 <code>CmakeLists.txt</code>(注意文件名大小写):</p>
 <p> main.c 文件内容:</p>
  <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//main.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</div><div class="line">     <span class="built_in">printf</span>(<span class="string">"Hello World from t1 Main!\n"</span>);</div><div class="line">     <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
