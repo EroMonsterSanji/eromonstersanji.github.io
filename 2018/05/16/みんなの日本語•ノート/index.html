@@ -102,25 +102,25 @@
 
 
 
-  <meta name="description" content="Installing python3 errors raise：">
-<meta name="keywords" content="unix&#x2F;linux,python">
+  <meta name="description" content="みんなの日本語•ノート">
+<meta name="keywords" content="Japanese">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python3: error while loading shared libraries">
-<meta property="og:url" content="http://eromonstersanji.github.io/2017/07/11/python3-error-while-loading-shared-libraries-libpython3-5m-so-1-0-cannot-open-shared-object-file-No-such-file-or-directory/index.html">
+<meta property="og:title" content="みんなの日本語•ノート">
+<meta property="og:url" content="http://eromonstersanji.github.io/2018/05/16/みんなの日本語•ノート/index.html">
 <meta property="og:site_name" content="EroMonsterSanji">
-<meta property="og:description" content="Installing python3 errors raise：">
+<meta property="og:description" content="みんなの日本語•ノート">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-07-24T19:00:53.000Z">
+<meta property="og:updated_time" content="2018-05-16T13:55:07.727Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python3: error while loading shared libraries">
-<meta name="twitter:description" content="Installing python3 errors raise：">
+<meta name="twitter:title" content="みんなの日本語•ノート">
+<meta name="twitter:description" content="みんなの日本語•ノート">
 
 
 
 
 
 
-  <link rel="canonical" href="http://eromonstersanji.github.io/2017/07/11/python3-error-while-loading-shared-libraries-libpython3-5m-so-1-0-cannot-open-shared-object-file-No-such-file-or-directory/"/>
+  <link rel="canonical" href="http://eromonstersanji.github.io/2018/05/16/みんなの日本語•ノート/"/>
 
 
 
@@ -130,7 +130,7 @@
   };
 </script>
 
-  <title>Python3: error while loading shared libraries | EroMonsterSanji</title>
+  <title>みんなの日本語•ノート | EroMonsterSanji</title>
   
 
 
@@ -294,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://eromonstersanji.github.io/2017/07/11/python3-error-while-loading-shared-libraries-libpython3-5m-so-1-0-cannot-open-shared-object-file-No-such-file-or-directory/">
+    <link itemprop="mainEntityOfPage" href="http://eromonstersanji.github.io/2018/05/16/みんなの日本語•ノート/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zheng SHI">
@@ -311,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python3: error while loading shared libraries
+          <h1 class="post-title" itemprop="name headline">みんなの日本語•ノート
               
             
           </h1>
@@ -336,24 +336,12 @@
                 
               
 
-              <time title="Created: 2017-07-11 04:12:47" itemprop="dateCreated datePublished" datetime="2017-07-11T04:12:47+08:00">2017-07-11</time>
+              <time title="Created: 2018-05-16 21:48:52 / Modified: 21:55:07" itemprop="dateCreated datePublished" datetime="2018-05-16T21:48:52+08:00">2018-05-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2017-07-25 03:00:53" itemprop="dateModified" datetime="2017-07-25T03:00:53+08:00">2017-07-25</time>
               
             
           </span>
@@ -370,7 +358,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Japanese/" itemprop="url" rel="index"><span itemprop="name">Japanese</span></a></span>
 
                 
                 
@@ -404,16 +392,60 @@
       
 
       
-        <h3 id="Installing-python3-errors-raise："><a href="#Installing-python3-errors-raise：" class="headerlink" title="Installing python3 errors raise："></a>Installing python3 errors raise：</h3><a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ wget https://www.python.org/ftp/python/3.X.X/Python-3.X.X.tgz</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ./configure --prefix=/usr/<span class="built_in">local</span>/Python-3.X.X --<span class="built_in">enable</span>-shared</div><div class="line">$ make</div><div class="line">$ make install</div></pre></td></tr></table></figure>
-<h4 id="Error-raising："><a href="#Error-raising：" class="headerlink" title="Error raising："></a>Error raising：</h4><blockquote>
-<p>python3: error while loading shared libraries: libpython3.Xm.so.1.0: cannot open shared object file: No such file or directory</p>
-</blockquote>
-<h4 id="Solutions："><a href="#Solutions：" class="headerlink" title="Solutions："></a>Solutions：</h4><ol>
-<li>check the dynamic lib<br><code>ldd /usr/local/Python-3.X.X/bin/python3</code></li>
-<li>copy from the source code directory<br><code>cp libpython3.Xm.so.1.0 /usr/lib64/</code></li>
+        <p>みんなの日本語•ノート</p>
+<a id="more"></a>
+<h1 id="初级2"><a href="#初级2" class="headerlink" title="初级2"></a>初级2</h1><hr>
+<h2 id="29课"><a href="#29课" class="headerlink" title="29课"></a>29课</h2><ol>
+<li><p>窓が　<strong><em>開いて</em></strong> います。<br> 開く</p>
+</li>
+<li><p>窓が　<strong><em>閉まって</em></strong> います。<br> 閉まる</p>
+</li>
+<li><p>窓が　<strong><em>割れて</em></strong> います。 （鏡／おさら／コップ／カップ）<br> <ruby>割<rp>(</rp><rt>わ</rt><rp>)</rp></ruby>れる</p>
+</li>
+<li><p>椅子が　<strong><em>壊れて</em></strong> います。<br> <ruby>壊<rp>(</rp><rt>こわ</rt><rp>)</rp></ruby>れる</p>
+</li>
+<li><p>椅子の足が　<strong><em>折れて </em></strong>います。<br> <ruby>折<rp>(</rp><rt>お</rt><rp>)</rp></ruby>れる</p>
+</li>
+<li><p>ふくろが　<strong><em>破れて</em></strong> います。　（服／くつした／紙）<br> <ruby>破<rp>(</rp><rt>やぶ</rt><rp>)</rp></ruby>れる</p>
+</li>
+<li><p>シャツが　<strong><em>汚れて</em></strong> います。<br> <ruby>汚<rp>(</rp><rt>よご</rt><rp>)</rp></ruby>れる</p>
+</li>
+<li><p>時計が　<strong><em>止まって</em></strong> います。<br> 止まる</p>
+</li>
+<li><p>電気が　<strong><em>付いて</em></strong> います。<br> 付く</p>
+</li>
+<li><p>テレビが　<strong><em>消えて</em></strong> います。<br>消える</p>
+</li>
+<li><p>鍵が　<strong><em>かかって</em></strong> います。<br>かかる</p>
+</li>
+<li><p>ボタンが　<strong><em>外れて</em></strong> います。<br><ruby>外<rp>(</rp><rt>はず</rt><rp>)</rp></ruby>れる</p>
+</li>
+<li><p>木が　<strong><em>倒れて</em></strong> います。<br><ruby>倒<rp>(</rp><rt>たお</rt><rp>)</rp></ruby>れる</p>
+</li>
+<li><p>カバンにポケットが　<strong><em>付いて</em></strong> います。<br>付く</p>
+</li>
+<li><p>カバン（の中）に傘と本が　<strong><em>入って</em></strong> います。<br><ruby>入<rp>(</rp><rt>はい</rt><rp>)</rp></ruby>る</p>
+</li>
 </ol>
+<ol>
+<li><p>道／電車　が　<strong><em>込んで</em></strong> います。<br>込む</p>
+</li>
+<li><p>道／電車　が　<strong><em>空いて</em></strong> います。<br><ruby>空<rp>(</rp><rt>す</rt><rp>)</rp></ruby>く</p>
+</li>
+<li><p>木の枝が　<strong><em>折れて</em></strong> います。<br>折れる</p>
+</li>
+<li><p>カバンが　<strong><em>開いて</em></strong> います。<br>開く</p>
+</li>
+<li><p>店が　<strong><em>閉まって</em></strong> います。<br>閉まる</p>
+</li>
+<li><p>家の前に車が　<strong><em>止まって</em></strong> います。<br>止まる</p>
+</li>
+<li><p>クリニングの紙が　<strong><em>付いて</em></strong> います。<br>付く</p>
+</li>
+<li><p>ご飯が　<strong><em>付いて</em></strong> います。<br>付く</p>
+</li>
+</ol>
+<hr>
 
       
     </div>
@@ -466,9 +498,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/unix-linux/" rel="tag"># unix/linux</a>
-          
-            <a href="/tags/python/" rel="tag"># python</a>
+            <a href="/tags/Japanese/" rel="tag"># Japanese</a>
           
         </div>
       
@@ -481,8 +511,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/11/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/04/24/Physics/" rel="next" title="Physics">
+                <i class="fa fa-chevron-left"></i> Physics
               </a>
             
           </div>
@@ -490,10 +520,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/11/tar-command/" rel="prev" title="Tar command">
-                Tar command <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -682,7 +708,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Installing-python3-errors-raise："><span class="nav-number">1.</span> <span class="nav-text"><a href="#Installing-python3-errors-raise&#xFF1A;" class="headerlink" title="Installing python3 errors raise&#xFF1A;"></a>Installing python3 errors raise&#xFF1A;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Error-raising："><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#Error-raising&#xFF1A;" class="headerlink" title="Error raising&#xFF1A;"></a>Error raising&#xFF1A;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Solutions："><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#Solutions&#xFF1A;" class="headerlink" title="Solutions&#xFF1A;"></a>Solutions&#xFF1A;</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初级2"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x521D;&#x7EA7;2" class="headerlink" title="&#x521D;&#x7EA7;2"></a>&#x521D;&#x7EA7;2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#29课"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#29&#x8BFE;" class="headerlink" title="29&#x8BFE;"></a>29&#x8BFE;</span></a></li></ol></li></ol></div>
             
 
           </div>
