@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="default">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="数学多項式関数 （多项式函数）剰余定理と因数定理 剰余定理  对于多项式 f(x) 与一次式 (x-a) (a为常数)(f(x) 与 (x-a) 的余数) = f(a) 因数定理  对于多项式 f(x) 与一次式 (x-a) (a为常数)(f(x) 被 (x-a) 整除) \Leftrightarrow f(a)=0接線の方程式とその性質接線通过点 A(a, f(a))，斜率为 f&apos;(a) 的直">
+<meta name="keywords" content="物理,留学試験,EJU,数学,化学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="留学試験 理系">
+<meta property="og:url" content="http://eromonstersanji.github.io/2018/05/20/留学試験-理系/index.html">
+<meta property="og:site_name" content="EroMonsterSanji">
+<meta property="og:description" content="数学多項式関数 （多项式函数）剰余定理と因数定理 剰余定理  对于多项式 f(x) 与一次式 (x-a) (a为常数)(f(x) 与 (x-a) 的余数) = f(a) 因数定理  对于多项式 f(x) 与一次式 (x-a) (a为常数)(f(x) 被 (x-a) 整除) \Leftrightarrow f(a)=0接線の方程式とその性質接線通过点 A(a, f(a))，斜率为 f&apos;(a) 的直">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-20T17:24:10.060Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="留学試験 理系">
+<meta name="twitter:description" content="数学多項式関数 （多项式函数）剰余定理と因数定理 剰余定理  对于多项式 f(x) 与一次式 (x-a) (a为常数)(f(x) 与 (x-a) 的余数) = f(a) 因数定理  对于多项式 f(x) 与一次式 (x-a) (a为常数)(f(x) 被 (x-a) 整除) \Leftrightarrow f(a)=0接線の方程式とその性質接線通过点 A(a, f(a))，斜率为 f&apos;(a) 的直">
+
+
+
+
+
+
+  <link rel="canonical" href="http://eromonstersanji.github.io/2018/05/20/留学試験-理系/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>留学試験 理系 | EroMonsterSanji</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">EroMonsterSanji</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">俺様は天才だ</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags<span class="badge">15</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories<span class="badge">14</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives<span class="badge">25</span></a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eromonstersanji.github.io/2018/05/20/留学試験-理系/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zheng SHI">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="EroMonsterSanji">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">留学試験 理系
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-20 20:58:30" itemprop="dateCreated datePublished" datetime="2018-05-20T20:58:30+08:00">2018-05-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-05-21 01:24:10" itemprop="dateModified" datetime="2018-05-21T01:24:10+08:00">2018-05-21</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/留学試験/" itemprop="url" rel="index"><span itemprop="name">留学試験</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/留学試験/EJU/" itemprop="url" rel="index"><span itemprop="name">EJU</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/留学試験/EJU/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/留学試験/EJU/数学/物理/" itemprop="url" rel="index"><span itemprop="name">物理</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/留学試験/EJU/数学/物理/化学/" itemprop="url" rel="index"><span itemprop="name">化学</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<h1 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h1><h2 id="多項式関数-（多项式函数）"><a href="#多項式関数-（多项式函数）" class="headerlink" title="多項式関数 （多项式函数）"></a>多項式関数 （多项式函数）</h2><h3 id="剰余定理と因数定理"><a href="#剰余定理と因数定理" class="headerlink" title="剰余定理と因数定理"></a>剰余定理と因数定理</h3><ul>
+<li>剰余定理</li>
+</ul>
+<script type="math/tex; mode=display">对于多项式 f(x) 与一次式 (x-a) (a为常数)</script><script type="math/tex; mode=display">(f(x) 与 (x-a) 的余数) = f(a)</script><ul>
+<li>因数定理</li>
+</ul>
+<script type="math/tex; mode=display">对于多项式 f(x) 与一次式 (x-a) (a为常数)</script><script type="math/tex; mode=display">(f(x) 被 (x-a) 整除) \Leftrightarrow f(a)=0</script><h3 id="接線の方程式とその性質"><a href="#接線の方程式とその性質" class="headerlink" title="接線の方程式とその性質"></a>接線の方程式とその性質</h3><h4 id="接線"><a href="#接線" class="headerlink" title="接線"></a>接線</h4><script type="math/tex; mode=display">通过点 A(a, f(a))，斜率为 f'(a) 的直线</script><script type="math/tex; mode=display">l : y = f'(a)(x - a) + f(a)</script><h2 id="指数関数・対数関数（指数函数・对数函数）"><a href="#指数関数・対数関数（指数函数・对数函数）" class="headerlink" title="指数関数・対数関数（指数函数・对数函数）"></a>指数関数・対数関数（指数函数・对数函数）</h2><h3 id="指数・対数の計算規則"><a href="#指数・対数の計算規則" class="headerlink" title="指数・対数の計算規則"></a>指数・対数の計算規則</h3><ol>
+<li><p>指数</p>
+<script type="math/tex; mode=display">1. \space a^{x_1 + x_2} = a^{x_1} \cdot a^{x_2}</script><script type="math/tex; mode=display">2. \space a^{x_1 - x_2} = \frac{a^{x_1}}{a^{x_2}}</script><script type="math/tex; mode=display">3. \space a^{kx} = (a^x)^k</script></li>
+<li><p>対数 </p>
+<script type="math/tex; mode=display">1. \space {\log_{a} y_1} + {\log_{a} y_2} = {\log_{a} y_1 y_2}</script><script type="math/tex; mode=display">2. \space {\log_{a} y_1} - {\log_{a} y_2} = {\log_{a} \frac{y_1}{y_2}}</script><script type="math/tex; mode=display">3. \space k \log_{a} y = \log_{a} y^k</script></li>
+</ol>
+<hr>
+<h1 id="物理"><a href="#物理" class="headerlink" title="物理"></a>物理</h1><h2 id="シラバス"><a href="#シラバス" class="headerlink" title="シラバス"></a>シラバス</h2><hr>
+<h1 id="化学"><a href="#化学" class="headerlink" title="化学"></a>化学</h1><h2 id="シラバス-1"><a href="#シラバス-1" class="headerlink" title="シラバス"></a>シラバス</h2>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wechatQR.jpg" alt="Zheng SHI wechat" style="width: 200px; max-width: 100%;"/>
+    <div></div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Zheng SHI Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/物理/" rel="tag"># 物理</a>
+          
+            <a href="/tags/留学試験/" rel="tag"># 留学試験</a>
+          
+            <a href="/tags/EJU/" rel="tag"># EJU</a>
+          
+            <a href="/tags/数学/" rel="tag"># 数学</a>
+          
+            <a href="/tags/化学/" rel="tag"># 化学</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/16/みんなの日本語•ノート/" rel="next" title="みんなの日本語•ノート">
+                <i class="fa fa-chevron-left"></i> みんなの日本語•ノート
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zheng SHI</p>
+              <p class="site-description motion-element" itemprop="description">Personal blog</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/EroMonsterSanji" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数学"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x6570;&#x5B66;" class="headerlink" title="&#x6570;&#x5B66;"></a>&#x6570;&#x5B66;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#多項式関数-（多项式函数）"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x591A;&#x9805;&#x5F0F;&#x95A2;&#x6570;-&#xFF08;&#x591A;&#x9879;&#x5F0F;&#x51FD;&#x6570;&#xFF09;" class="headerlink" title="&#x591A;&#x9805;&#x5F0F;&#x95A2;&#x6570; &#xFF08;&#x591A;&#x9879;&#x5F0F;&#x51FD;&#x6570;&#xFF09;"></a>&#x591A;&#x9805;&#x5F0F;&#x95A2;&#x6570; &#xFF08;&#x591A;&#x9879;&#x5F0F;&#x51FD;&#x6570;&#xFF09;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#剰余定理と因数定理"><span class="nav-number">1.1.1.</span> <span class="nav-text"><a href="#&#x5270;&#x4F59;&#x5B9A;&#x7406;&#x3068;&#x56E0;&#x6570;&#x5B9A;&#x7406;" class="headerlink" title="&#x5270;&#x4F59;&#x5B9A;&#x7406;&#x3068;&#x56E0;&#x6570;&#x5B9A;&#x7406;"></a>&#x5270;&#x4F59;&#x5B9A;&#x7406;&#x3068;&#x56E0;&#x6570;&#x5B9A;&#x7406;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接線の方程式とその性質"><span class="nav-number">1.1.2.</span> <span class="nav-text"><a href="#&#x63A5;&#x7DDA;&#x306E;&#x65B9;&#x7A0B;&#x5F0F;&#x3068;&#x305D;&#x306E;&#x6027;&#x8CEA;" class="headerlink" title="&#x63A5;&#x7DDA;&#x306E;&#x65B9;&#x7A0B;&#x5F0F;&#x3068;&#x305D;&#x306E;&#x6027;&#x8CEA;"></a>&#x63A5;&#x7DDA;&#x306E;&#x65B9;&#x7A0B;&#x5F0F;&#x3068;&#x305D;&#x306E;&#x6027;&#x8CEA;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#接線"><span class="nav-number">1.1.2.1.</span> <span class="nav-text"><a href="#&#x63A5;&#x7DDA;" class="headerlink" title="&#x63A5;&#x7DDA;"></a>&#x63A5;&#x7DDA;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指数関数・対数関数（指数函数・对数函数）"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#&#x6307;&#x6570;&#x95A2;&#x6570;&#x30FB;&#x5BFE;&#x6570;&#x95A2;&#x6570;&#xFF08;&#x6307;&#x6570;&#x51FD;&#x6570;&#x30FB;&#x5BF9;&#x6570;&#x51FD;&#x6570;&#xFF09;" class="headerlink" title="&#x6307;&#x6570;&#x95A2;&#x6570;&#x30FB;&#x5BFE;&#x6570;&#x95A2;&#x6570;&#xFF08;&#x6307;&#x6570;&#x51FD;&#x6570;&#x30FB;&#x5BF9;&#x6570;&#x51FD;&#x6570;&#xFF09;"></a>&#x6307;&#x6570;&#x95A2;&#x6570;&#x30FB;&#x5BFE;&#x6570;&#x95A2;&#x6570;&#xFF08;&#x6307;&#x6570;&#x51FD;&#x6570;&#x30FB;&#x5BF9;&#x6570;&#x51FD;&#x6570;&#xFF09;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#指数・対数の計算規則"><span class="nav-number">1.2.1.</span> <span class="nav-text"><a href="#&#x6307;&#x6570;&#x30FB;&#x5BFE;&#x6570;&#x306E;&#x8A08;&#x7B97;&#x898F;&#x5247;" class="headerlink" title="&#x6307;&#x6570;&#x30FB;&#x5BFE;&#x6570;&#x306E;&#x8A08;&#x7B97;&#x898F;&#x5247;"></a>&#x6307;&#x6570;&#x30FB;&#x5BFE;&#x6570;&#x306E;&#x8A08;&#x7B97;&#x898F;&#x5247;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#物理"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x7269;&#x7406;" class="headerlink" title="&#x7269;&#x7406;"></a>&#x7269;&#x7406;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#シラバス"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#&#x30B7;&#x30E9;&#x30D0;&#x30B9;" class="headerlink" title="&#x30B7;&#x30E9;&#x30D0;&#x30B9;"></a>&#x30B7;&#x30E9;&#x30D0;&#x30B9;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#化学"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x5316;&#x5B66;" class="headerlink" title="&#x5316;&#x5B66;"></a>&#x5316;&#x5B66;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#シラバス-1"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#&#x30B7;&#x30E9;&#x30D0;&#x30B9;-1" class="headerlink" title="&#x30B7;&#x30E9;&#x30D0;&#x30B9;"></a>&#x30B7;&#x30E9;&#x30D0;&#x30B9;</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zheng SHI</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.4.3</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+      .copy-btn {
+          display: inline-block;
+          padding: 6px 12px;
+          font-size: 13px;
+          font-weight: 700;
+          line-height: 20px;
+          color: #333;
+          white-space: nowrap;
+          vertical-align: middle;
+          cursor: pointer;
+          background-color: #eee;
+          background-image: linear-gradient(#fcfcfc, #eee);
+          border: 1px solid #d5d5d5;
+          border-radius: 3px;
+          user-select: none;
+      }
+
+      .highlight-wrap .copy-btn {
+          transition: opacity .3s ease-in-out;
+          opacity: 0;
+          padding: 2px 6px;
+          position: absolute;
+          right: 4px;
+          top: 8px;
+      }
+
+      .highlight-wrap:hover .copy-btn,
+      .highlight-wrap .copy-btn:focus {
+          opacity: 1
+      }
+
+      .highlight-wrap {
+          position: relative;
+      }
+  </style>
+  <script>
+      $('.highlight').each(function(i, e) {
+          var $wrap = $('<div>').addClass('highlight-wrap')
+          $(e).after($wrap)
+          $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+              var code = $(e.target).parent().find('.code').find('.line').map(function(i, e) {
+                  return $(e).text()
+              }).toArray().join('\n')
+              var ta = document.createElement('textarea')
+              document.body.appendChild(ta)
+              ta.style.position = 'fixed'
+              ta.style.top = 0
+              ta.style.left = 0
+              ta.value = code
+              ta.select()
+              ta.focus()
+              document.execCommand('copy')
+              document.body.removeChild(ta)
+          })).append(e)
+      })
+  </script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+</body>
+</html>
