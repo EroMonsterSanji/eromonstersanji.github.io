@@ -102,25 +102,25 @@
 
 
 
-  <meta name="description" content="我们谈谈cin.clear的作用,第一次看到这东西,很多人以为就是清空cin里面的数据流,而实际上却与此相差很远。">
-<meta name="keywords" content="C&#x2F;C++">
+  <meta name="description" content="积分表公式推导">
+<meta name="keywords" content="数学">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++中cin.clear()的用法">
-<meta property="og:url" content="http://eromonstersanji.github.io/2017/08/16/C-中cin-clear-的用法/index.html">
+<meta property="og:title" content="积分表公式推导">
+<meta property="og:url" content="http://eromonstersanji.github.io/2018/09/06/积分表公式推导/index.html">
 <meta property="og:site_name" content="EroMonsterSanji">
-<meta property="og:description" content="我们谈谈cin.clear的作用,第一次看到这东西,很多人以为就是清空cin里面的数据流,而实际上却与此相差很远。">
+<meta property="og:description" content="积分表公式推导">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2017-08-15T18:01:33.000Z">
+<meta property="og:updated_time" content="2018-09-06T13:34:23.925Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++中cin.clear()的用法">
-<meta name="twitter:description" content="我们谈谈cin.clear的作用,第一次看到这东西,很多人以为就是清空cin里面的数据流,而实际上却与此相差很远。">
+<meta name="twitter:title" content="积分表公式推导">
+<meta name="twitter:description" content="积分表公式推导">
 
 
 
 
 
 
-  <link rel="canonical" href="http://eromonstersanji.github.io/2017/08/16/C-中cin-clear-的用法/"/>
+  <link rel="canonical" href="http://eromonstersanji.github.io/2018/09/06/积分表公式推导/"/>
 
 
 
@@ -130,7 +130,7 @@
   };
 </script>
 
-  <title>C++中cin.clear()的用法 | EroMonsterSanji</title>
+  <title>积分表公式推导 | EroMonsterSanji</title>
   
 
 
@@ -294,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://eromonstersanji.github.io/2017/08/16/C-中cin-clear-的用法/">
+    <link itemprop="mainEntityOfPage" href="http://eromonstersanji.github.io/2018/09/06/积分表公式推导/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zheng SHI">
@@ -311,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C++中cin.clear()的用法
+          <h1 class="post-title" itemprop="name headline">积分表公式推导
               
             
           </h1>
@@ -336,7 +336,7 @@
                 
               
 
-              <time title="Created: 2017-08-16 01:47:37 / Modified: 02:01:33" itemprop="dateCreated datePublished" datetime="2017-08-16T01:47:37+08:00">2017-08-16</time>
+              <time title="Created: 2018-09-06 22:29:07 / Modified: 21:34:23" itemprop="dateCreated datePublished" datetime="2018-09-06T22:29:07+08:00">2018-09-06</time>
             
 
             
@@ -346,24 +346,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C-C/" itemprop="url" rel="index"><span itemprop="name">C/C++</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -392,25 +374,9 @@
       
 
       
-        <p>我们谈谈cin.clear的作用,第一次看到这东西,很多人以为就是清空cin里面的数据流,而实际上却与此相差很远。</p>
+        <p>积分表公式推导</p>
 <a id="more"></a>
-<p>首先我们看看以下代码:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">cin</span>.rdstate() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">cin</span>.rdstate() == ios::goodbit) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"输入数据的类型正确，无错误！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">cin</span>.rdstate() == ios_base::failbit) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"输入数据类型错误，非致命错误，可清除输入缓冲区挽回！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们定义要输入到的变量是整型,但如果我们输入了英文字母或者汉字,那就会发生错误,<code>cin</code>里有个方法能检测这个错误,就是<code>cin.rdstate()</code>;</p>
-<p> 当<code>cin.rdstate()</code>返回0(即<code>ios::goodbit</code>)时表示无错误,可以继续输入或者操作,若返回4则发生非致命错误即<code>ios::failbit</code>,则不能继续输入或操作.而<code>cin.clear</code>则可以控制我们此时<code>cin</code>里对这个问题的一个标识。</p>
-<p> 语法如下: <code>cin.clear(标识符);</code> 标识符号为:</p>
-<ul>
-<li><code>goodbit</code> 无错误</li>
-<li><code>Eofbit</code> 已到达文件尾</li>
-<li><code>failbit</code> 非致命的输入/输出错误，可挽回</li>
-<li><code>badbit</code>　致命的输入/输出错误,无法挽回 若在输入输出类里.需要加ios::标识符号</li>
-</ul>
-<p>通过<code>cin.clear</code>,我们能确认它的内部标识符,如果输入错误则能重新输入.结合真正的清空数据流方法<code>cin.sync()</code>,请看下例:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="built_in">cin</span>) &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"输入有错!请重新输入"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            <span class="built_in">cin</span>.clear();</span><br><span class="line">            <span class="built_in">cin</span>.sync();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; a;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面的<code>cin.clear()</code>默认参数为0,即无错误,正常操作。</p>
-<p>当我们输入英文字母<code>&#39;k&#39;</code>时，它的状态标识改为<code>fail</code>，即错误，用<code>cout</code>对用户输出信息,再用<code>cin.clear</code>让错误标识改回为0,让我们可以继续输入,再清空流数据继续输入.</p>
-<p>如果我们没有了<code>cin.clear</code>,则会进入死循环,其过程为我们输入了英文字母,它的状态标识便为<code>fail</code>,当运行到条件判断时,便总是回到错误的条件表示里,并且我们再也没办法输入,因为错误的表示关闭了<code>cin</code>,所以会进入死循环.</p>
-
+<h1 id="含有-ax-b-的积分"><a href="#含有-ax-b-的积分" class="headerlink" title="含有 $ax + b$ 的积分"></a>含有 $ax + b$ 的积分</h1><h2 id="int-frac-dx-ax-b-frac-1-a-cdot-ln-ax-b-C"><a href="#int-frac-dx-ax-b-frac-1-a-cdot-ln-ax-b-C" class="headerlink" title="\int \frac{dx}{ax + b} = \frac{1}{a} \cdot \ln{|ax+b|} + C"></a>\int \frac{dx}{ax + b} = \frac{1}{a} \cdot \ln{|ax+b|} + C</h2>
       
     </div>
 
@@ -462,7 +428,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C-C/" rel="tag"># C/C++</a>
+            <a href="/tags/数学/" rel="tag"># 数学</a>
           
         </div>
       
@@ -475,8 +441,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/25/Linux的nm查看动态和静态库中的符号/" rel="next" title="Linux的nm查看动态和静态库中的符号">
-                <i class="fa fa-chevron-left"></i> Linux的nm查看动态和静态库中的符号
+              <a href="/2018/08/01/EJU-CHEMISTRY/" rel="next" title="EJU_CHEMISTRY">
+                <i class="fa fa-chevron-left"></i> EJU_CHEMISTRY
               </a>
             
           </div>
@@ -484,10 +450,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/20/nginx基本入门/" rel="prev" title="nginx documentation">
-                nginx documentation <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -538,8 +500,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -665,6 +636,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#含有-ax-b-的积分"><span class="nav-number">1.</span> <span class="nav-text">含有 $ax + b$ 的积分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#int-frac-dx-ax-b-frac-1-a-cdot-ln-ax-b-C"><span class="nav-number">1.1.</span> <span class="nav-text">\int \frac{dx}{ax + b} = \frac{1}{a} \cdot \ln{|ax+b|} + C</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

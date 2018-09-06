@@ -243,7 +243,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives<span class="badge">28</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives<span class="badge">29</span></a>
   </li>
 
       
@@ -397,15 +397,15 @@
 <h3 id="总结下来主要有3种方法："><a href="#总结下来主要有3种方法：" class="headerlink" title="总结下来主要有3种方法："></a>总结下来主要有3种方法：</h3><ol>
 <li>用ln将需要的so文件链接到/usr/lib或者/lib这两个默认的目录下边</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ln -s /<span class="built_in">where</span>/you/install/lib/*.so /usr/lib</div><div class="line">sudo ldconfig</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s /<span class="built_in">where</span>/you/install/lib/*.so /usr/lib</span><br><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
 <ol>
 <li>修改LD_LIBRARY_PATH</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/<span class="built_in">where</span>/you/install/lib:<span class="variable">$LD_LIBRARY_PATH</span></div><div class="line">sudo ldconfig</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/<span class="built_in">where</span>/you/install/lib:<span class="variable">$LD_LIBRARY_PATH</span></span><br><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
 <ol>
 <li>修改/etc/ld.so.conf，然后刷新</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">vim /etc/ld.so.conf</div><div class="line">add /<span class="built_in">where</span>/you/install/lib</div><div class="line"></div><div class="line">sudo ldconfig</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ld.so.conf</span><br><span class="line">add /<span class="built_in">where</span>/you/install/lib</span><br><span class="line"></span><br><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -559,7 +559,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

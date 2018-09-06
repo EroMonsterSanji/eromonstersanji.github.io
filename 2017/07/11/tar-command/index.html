@@ -243,7 +243,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives<span class="badge">28</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives<span class="badge">29</span></a>
   </li>
 
       
@@ -404,7 +404,7 @@
       
 
       
-        <h3 id="tar-command"><a href="#tar-command" class="headerlink" title="tar command"></a>tar command</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ tar [-cxtzjvfpPN] files or directories</div></pre></td></tr></table></figure>
+        <h3 id="tar-command"><a href="#tar-command" class="headerlink" title="tar command"></a>tar command</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar [-cxtzjvfpPN] files or directories</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h4 id="Arguments："><a href="#Arguments：" class="headerlink" title="Arguments："></a>Arguments：</h4><ul>
 <li><p><code>-c</code>: Create a new archive containing the specified items.</p>
@@ -425,7 +425,7 @@
 <li><p><code>-v</code>: In create and extract modes, tar will list each file name as it is read from or written to the archive. In list mode, tar will produce output similar to that of ls.</p>
 </li>
 <li><p><code>-f</code>: Read the archive from or write the archive to the specified file.</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ tar -zcvfP tfile sfile <span class="comment"># Incorrect</span></div><div class="line"></div><div class="line">$ tar -zcvPf tfile sfile <span class="comment"># Correct</span></div></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ tar -zcvfP tfile sfile <span class="comment"># Incorrect</span></span><br><span class="line"></span><br><span class="line">$ tar -zcvPf tfile sfile <span class="comment"># Correct</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>-p</code>: (x mode only) Preserve file permissions.</p>
 </li>
@@ -433,25 +433,25 @@
 <hr>
 <h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples:"></a>Examples:</h3><ol>
 <li><p>Tarring all files in <code>/etc</code> to <code>/tmp/etc.tar</code></p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ tar -cvf /tmp/etc.tar /etc      <span class="comment"># No compressing</span></div><div class="line">$ tar -zcvf /tmp/etc.tar.gz /etc  <span class="comment"># Compressing with gzip</span></div><div class="line">$ tar -jcvf /tmp/etc.tar.bz2 /etc <span class="comment"># Compressing with bzip2</span></div></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ tar -cvf /tmp/etc.tar /etc      <span class="comment"># No compressing</span></span><br><span class="line">$ tar -zcvf /tmp/etc.tar.gz /etc  <span class="comment"># Compressing with gzip</span></span><br><span class="line">$ tar -jcvf /tmp/etc.tar.bz2 /etc <span class="comment"># Compressing with bzip2</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Listing files in <code>/tmp/etc.tar.gz</code></p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ tar -ztvf /tmp/etc.tar.gz       <span class="comment"># Cause we compressed with gzip, the -z is necessary</span></div></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar -ztvf /tmp/etc.tar.gz       <span class="comment"># Cause we compressed with gzip, the -z is necessary</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Decompress <code>/tmp/etc.tar.gz</code> to <code>/usr/local/src</code></p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src</div><div class="line">$ tar -zxvf /tmp/etc.tar.gz</div></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src</span><br><span class="line">$ tar -zxvf /tmp/etc.tar.gz</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Decompressing the <code>etc/passwd</code> in <code>/tmp/etc.tar.gz</code> to <code>/tmp</code></p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /tmp</div><div class="line">$ tar -zxvf /tmp/etc.tar.gz etc/passwd</div></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /tmp</span><br><span class="line">$ tar -zxvf /tmp/etc.tar.gz etc/passwd</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Tarring all files in <code>/etc/</code>, and keeping their permission</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ tar -zxvpf /tmp/etc.tar.gz /etc</div></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar -zxvpf /tmp/etc.tar.gz /etc</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Only the files later than 2005/06/01 will be tarred into <code>/home</code></p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ tar -N <span class="string">'2005/06/01'</span> -zcvf home.tar.gz /home</div></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar -N <span class="string">'2005/06/01'</span> -zcvf home.tar.gz /home</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>To tar <code>/home</code>, <code>/etc</code> excluding <code>/home/dmtsai</code></p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ tar --exclude /home/dmtsai -zcvf myfile.tar.gz /home/* /etc</div></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar --exclude /home/dmtsai -zcvf myfile.tar.gz /home/* /etc</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -607,7 +607,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
