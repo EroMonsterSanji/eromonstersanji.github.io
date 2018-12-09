@@ -356,7 +356,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-09 21:41:10" itemprop="dateModified" datetime="2018-12-09T21:41:10+08:00">2018-12-09</time>
+                <time title="Modified: 2018-12-09 21:46:08" itemprop="dateModified" datetime="2018-12-09T21:46:08+08:00">2018-12-09</time>
               
             
           </span>
@@ -391,17 +391,7 @@
       
         
           
-            <h1 id="INTRODUCTION-TO-PROBABILITY"><a href="#INTRODUCTION-TO-PROBABILITY" class="headerlink" title="INTRODUCTION TO PROBABILITY"></a>INTRODUCTION TO PROBABILITY</h1><h2 id="Set-Theory"><a href="#Set-Theory" class="headerlink" title="Set Theory"></a>Set Theory</h2><h3 id="Additional-Properties-of-Sets"><a href="#Additional-Properties-of-Sets" class="headerlink" title="Additional Properties of Sets"></a>Additional Properties of Sets</h3><ol>
-<li><p>De Morgan’s Laws<br> For every two sets A and B,</p>
-<script type="math/tex; mode=display">(A \cup B)^c = A^c \cap B^c \quad and \quad (A \cap B)^c = A^c \cup B^c</script></li>
-<li><p>Distributive Properties</p>
-<script type="math/tex; mode=display">A \cap (B \cup C) = (A \cap B) \cup (A \cap C) \quad and \quad A \cup (B \cap C) = (A \cup B) \cap (A \cup C)</script></li>
-<li><p>Partitioning a Set</p>
-<p> For every two sets A and B, $A \cap B$ and $A \cap B^c$ are disjoint and</p>
-<script type="math/tex; mode=display">A = (A \cap B) \cup (A \cap B^c)</script><p> In addition, B and $A \cap B^c$ are disjoint, and</p>
-<script type="math/tex; mode=display">A \cup B = B \cup (A \cap B^c)</script></li>
-</ol>
-<h2 id="Probabilities-Defined-on-Events"><a href="#Probabilities-Defined-on-Events" class="headerlink" title="Probabilities Defined on Events"></a>Probabilities Defined on Events</h2><h3 id="Axioms"><a href="#Axioms" class="headerlink" title="Axioms"></a>Axioms</h3><ol>
+            <h1 id="INTRODUCTION-TO-PROBABILITY"><a href="#INTRODUCTION-TO-PROBABILITY" class="headerlink" title="INTRODUCTION TO PROBABILITY"></a>INTRODUCTION TO PROBABILITY</h1><h2 id="Probabilities-Defined-on-Events"><a href="#Probabilities-Defined-on-Events" class="headerlink" title="Probabilities Defined on Events"></a>Probabilities Defined on Events</h2><h3 id="Axioms"><a href="#Axioms" class="headerlink" title="Axioms"></a>Axioms</h3><ol>
 <li><p>For every event A, $Pr(A) \ge 0$</p>
 </li>
 <li><p>$Pr(S) = 1$</p>
@@ -410,12 +400,12 @@
 <script type="math/tex; mode=display">Pr(\bigcup_{i=1}^{\infty} A_i) = \sum_{i=1}^{\infty} Pr(A_i)</script></li>
 </ol>
 <h3 id="Theorem"><a href="#Theorem" class="headerlink" title="Theorem"></a>Theorem</h3><ol>
-<li><p>For every two events A and B,</p>
-<script type="math/tex; mode=display">Pr(A \cap B^c) = Pr(A) - Pr(A \cap B)</script></li>
-<li><p>For every two events A and B,</p>
-<script type="math/tex; mode=display">Pr(A \cup B) = Pr(A) + Pr(B) - Pr(A \cap B)</script></li>
-<li><p>Bonferroni Inequality</p>
-<script type="math/tex; mode=display">Pr(\bigcup_{i=1}^{\infty} A_i) \le \sum_{i=1}^{\infty} Pr(A_i) \quad and \quad Pr(\bigcap_{i=1}^{\infty} A_i) \ge 1 - \sum_{i=1}^{\infty} Pr(A_{i}^{c})</script></li>
+<li><p>$Pr(E^c) = 1 - Pr(E)$</p>
+</li>
+<li><p>$Pr(E \cup F) = Pr(E) + Pr(F) - Pr(EF)$</p>
+</li>
+<li><p>$Pr(E \cup F \cup G) = Pr(E) + Pr(F) + Pr(G) - Pr(EF) - Pr(EG)- Pr(FG) + Pr(EFG)$</p>
+</li>
 </ol>
 
           
