@@ -356,7 +356,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-09 21:54:15" itemprop="dateModified" datetime="2018-12-09T21:54:15+08:00">2018-12-09</time>
+                <time title="Modified: 2018-12-09 22:41:34" itemprop="dateModified" datetime="2018-12-09T22:41:34+08:00">2018-12-09</time>
               
             
           </span>
@@ -392,7 +392,7 @@
         
           
             <h1 id="INTRODUCTION-TO-PROBABILITY"><a href="#INTRODUCTION-TO-PROBABILITY" class="headerlink" title="INTRODUCTION TO PROBABILITY"></a>INTRODUCTION TO PROBABILITY</h1><h2 id="Probabilities-Defined-on-Events"><a href="#Probabilities-Defined-on-Events" class="headerlink" title="Probabilities Defined on Events"></a>Probabilities Defined on Events</h2><h3 id="Axioms"><a href="#Axioms" class="headerlink" title="Axioms"></a>Axioms</h3><ol>
-<li><p>For every event A, $Pr(A) \ge 0$</p>
+<li><p>For every event $A$, $Pr(A) \ge 0$</p>
 </li>
 <li><p>$Pr(S) = 1$</p>
 </li>
@@ -409,6 +409,10 @@
 <li><p>$Pr(E<em>1 \cup E_2 \cup \cdots \cup E_n) = \sum</em>{i} Pr(E<em>i) - \sum</em>{i &lt; j} Pr(E<em>i E_j) + \sum</em>{i &lt; j &lt; k} Pr(E<em>i E_j E_k) - \sum</em>{i &lt; j &lt; k &lt; l} Pr(E_i E_j E_k E_l) + \cdots + (-1)^{n+1} Pr(E_1 E_2 E_3 \cdots E_n)$</p>
 </li>
 </ol>
+<h2 id="Conditional-Probabilities"><a href="#Conditional-Probabilities" class="headerlink" title="Conditional Probabilities"></a>Conditional Probabilities</h2><script type="math/tex; mode=display">Pr(E|F) = \frac{Pr(EF)}{Pr(F)}</script><p>Note that Equation is only well defined when $P(F) &gt; 0$ and hence $P(E|F)$ is only defined when $P(F) &gt; 0$.</p>
+<script type="math/tex; mode=display">Pr(EF) = Pr(E|F) \cdot Pr(F)</script><h2 id="Independent-Events"><a href="#Independent-Events" class="headerlink" title="Independent Events"></a>Independent Events</h2><p>Two events $E$ and $F$ are said to be <em>independent</em> if</p>
+<script type="math/tex; mode=display">Pr(EF) = Pr(E) \cdot Pr(F)</script><script type="math/tex; mode=display">Pr(E|F) = Pr(E)</script><p>(which also implies that $P(F|E) = P(F)$). That is, $E$ and $F$ are independent if knowledge that $F$ has occurred does not affect the probability that $E$ occurs. That is, the occurrence of $E$ is independent of whether or not $F$ occurs.</p>
+<p>Two events $E$ and $F$ that are not independent are said to be dependent.</p>
 
           
         
