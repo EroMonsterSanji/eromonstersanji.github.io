@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="EroMonsterSanji">
 <meta property="og:description" content="Probability and Statistics">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-09T18:30:06.548Z">
+<meta property="og:updated_time" content="2018-12-10T15:35:46.488Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Probability and Statistics">
 <meta name="twitter:description" content="Probability and Statistics">
@@ -353,7 +353,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-10 02:30:06" itemprop="dateModified" datetime="2018-12-10T02:30:06+08:00">2018-12-10</time>
+                <time title="Modified: 2018-12-10 23:35:46" itemprop="dateModified" datetime="2018-12-10T23:35:46+08:00">2018-12-10</time>
               
             
           </span>
@@ -403,15 +403,16 @@
 </li>
 <li><p>$Pr(E \cup F \cup G) = Pr(E) + Pr(F) + Pr(G) - Pr(EF) - Pr(EG)- Pr(FG) + Pr(EFG)$</p>
 </li>
-<li><script type="math/tex; mode=display">Pr(E_1 \cup E_2 \cup \cdots \cup E_n) = \sum_{i} Pr(E_i) - \sum_{i<j} Pr(E_iE_j) + \sum_{i<j<k} Pr(E_iE_jE_k) - \sum_{i<j<k<l} Pr(E_iE_jE_kE_l) + \cdots + (-1)^{n+1} Pr(E_1E_2E_3 \cdots E_n)</script></li>
+<li><p>$Pr(E_1 \cup E_2 \cup \cdots \cup E_n) = \sum_{i} Pr(E_i) - \sum_{i&lt;j} Pr(E_iE_j) + \sum_{i&lt;j&lt;k} Pr(E_iE_jE_k) - \sum_{i&lt;j&lt;k&lt;l} Pr(E_iE_jE_kE_l) + \cdots + (-1)^{n+1} Pr(E_1E_2E_3 \cdots E_n)$</p>
+</li>
 </ol>
 <h2 id="Conditional-Probabilities"><a href="#Conditional-Probabilities" class="headerlink" title="Conditional Probabilities"></a>Conditional Probabilities</h2><script type="math/tex; mode=display">Pr(E|F) = \frac{Pr(EF)}{Pr(F)}</script><p>Note that Equation is only well defined when $P(F) &gt; 0$ and hence $P(E|F)$ is only defined when $P(F) &gt; 0$.</p>
 <script type="math/tex; mode=display">Pr(EF) = Pr(E|F) \cdot Pr(F)</script><h2 id="Independent-Events"><a href="#Independent-Events" class="headerlink" title="Independent Events"></a>Independent Events</h2><p>Two events $E$ and $F$ are said to be <em>independent</em> if</p>
 <script type="math/tex; mode=display">Pr(EF) = Pr(E) \cdot Pr(F)</script><script type="math/tex; mode=display">Pr(E|F) = Pr(E)</script><p>(which also implies that $P(F|E) = P(F)$). That is, $E$ and $F$ are independent if knowledge that $F$ has occurred does not affect the probability that $E$ occurs. That is, the occurrence of $E$ is independent of whether or not $F$ occurs.</p>
 <p>Two events $E$ and $F$ that are not independent are said to be dependent.</p>
-<h2 id="Bayes’-Formula"><a href="#Bayes’-Formula" class="headerlink" title="Bayes’ Formula"></a>Bayes’ Formula</h2><p>Let E and F be events. We may express E as</p>
+<h2 id="Bayes’-Formula"><a href="#Bayes’-Formula" class="headerlink" title="Bayes’ Formula"></a>Bayes’ Formula</h2><p>Let $E$ and $F$ be events. We may express $E$ as</p>
 <script type="math/tex; mode=display">E = EF \cup EF^c</script><p>because in order for a point to be in $E$,it must either be in both $E$ and $F$,or it must be in $E$ and not in $F$. Since $EF$ and $EF^c$ are mutually exclusive, we have that</p>
-<script type="math/tex; mode=display">Pr(E) = Pr(EF) + Pr(EF^c)</script><script type="math/tex; mode=display">= P(E|F)P(F) + P(E|F^c)P(Fc)</script><script type="math/tex; mode=display">= P(E|F)P(F) + P(E|F^c)(1 − P(F))</script>
+<script type="math/tex; mode=display">Pr(E) = Pr(EF) + Pr(EF^c)</script><script type="math/tex; mode=display">= Pr(E|F)Pr(F) + Pr(E|F^c)Pr(Fc)</script><script type="math/tex; mode=display">= Pr(E|F)Pr(F) + Pr(E|F^c)(1 − Pr(F))</script><h1 id="Random-Variables"><a href="#Random-Variables" class="headerlink" title="Random Variables"></a>Random Variables</h1>
       
     </div>
 
@@ -689,7 +690,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#INTRODUCTION-TO-PROBABILITY"><span class="nav-number">1.</span> <span class="nav-text">INTRODUCTION TO PROBABILITY</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Probabilities-Defined-on-Events"><span class="nav-number">1.1.</span> <span class="nav-text">Probabilities Defined on Events</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Axioms"><span class="nav-number">1.1.1.</span> <span class="nav-text">Axioms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Theorem"><span class="nav-number">1.1.2.</span> <span class="nav-text">Theorem</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conditional-Probabilities"><span class="nav-number">1.2.</span> <span class="nav-text">Conditional Probabilities</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Independent-Events"><span class="nav-number">1.3.</span> <span class="nav-text">Independent Events</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bayes’-Formula"><span class="nav-number">1.4.</span> <span class="nav-text">Bayes’ Formula</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#INTRODUCTION-TO-PROBABILITY"><span class="nav-number">1.</span> <span class="nav-text">INTRODUCTION TO PROBABILITY</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Probabilities-Defined-on-Events"><span class="nav-number">1.1.</span> <span class="nav-text">Probabilities Defined on Events</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Axioms"><span class="nav-number">1.1.1.</span> <span class="nav-text">Axioms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Theorem"><span class="nav-number">1.1.2.</span> <span class="nav-text">Theorem</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conditional-Probabilities"><span class="nav-number">1.2.</span> <span class="nav-text">Conditional Probabilities</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Independent-Events"><span class="nav-number">1.3.</span> <span class="nav-text">Independent Events</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bayes’-Formula"><span class="nav-number">1.4.</span> <span class="nav-text">Bayes’ Formula</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Random-Variables"><span class="nav-number">2.</span> <span class="nav-text">Random Variables</span></a></li></ol></div>
             
 
           </div>
